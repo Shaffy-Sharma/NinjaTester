@@ -5,7 +5,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class Stack_Steps {
-	
 	@Given("User is in the Home Page after Logged in for Stack page {int}")
 	public void user_is_in_the_home_page_after_logged_in_for_stack_page(Integer int1) {
 	    throw new io.cucumber.java.PendingException();
