@@ -1,52 +1,69 @@
 package stepDefinitions;
 
+import org.openqa.selenium.WebDriver;
+
+import Hooks.hooks;
+import PageFactory.LinkedList_Page;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LinedListStep
+
+public class LinkedListStep
 {
-	
+	//WebDriver driver = hooks.driver;
+	LinkedList_Page LINKLISTPAGe = new LinkedList_Page();
    @Given("The user has successfully logged in and is on the Home page")
-	public void the_user_has_successfully_logged_in_and_is_on_the_home_page() {
-	    
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_has_successfully_logged_in_and_is_on_the_home_page()
+   {
+	   LINKLISTPAGe.openLoginPage();
+	   
+	   LINKLISTPAGe.Click_SignIn_button();
+	   LINKLISTPAGe.Enter_Username("NinjaTester");
+	   LINKLISTPAGe.Enter_Password("Welcome@123");
+	   LINKLISTPAGe.Click_Login();
+	   
+	   
 	}
 
 	@When("The user clicks the {string} button in Linked List Panel OR selects Linked List from the dropdown menu")
 	public void the_user_clicks_the_button_in_linked_list_panel_or_selects_linked_list_from_the_dropdown_menu(String string) {
-	    
-	    throw new io.cucumber.java.PendingException();
+		LINKLISTPAGe.click_getStartedbtn();
+	   
 	}
 
 	@Then("The user should be directed to {string} Data Structure Page")
-	public void the_user_should_be_directed_to_data_structure_page(String string) {
-	  
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_should_be_directed_to_data_structure_page(String string)
+	{
+		
+	    
 	}
 
 	@Given("The user has navigated to the Linked List main page")
-	public void the_user_has_navigated_to_the_linked_list_main_page() {
-	    
-	    throw new io.cucumber.java.PendingException();
+	public void the_user_has_navigated_to_the_linked_list_main_page()
+	{
+	  
 	}
 
 	@When("The user clicks {string} link")
-	public void the_user_clicks_link(String string) {
+	public void the_user_clicks_link(String string)
+	{
 	    
-	    throw new io.cucumber.java.PendingException();
+	   
 	}
 
 	@Then("The user should be redirected to {string} page")
-	public void the_user_should_be_redirected_to_page(String string) {
+	public void the_user_should_be_redirected_to_page(String string) 
+	{
 	   
-	    throw new io.cucumber.java.PendingException();
+	   
 	}
 
 	@Given("The user is viewing the Linked List - Introduction page")
-	public void the_user_is_viewing_the_linked_list_introduction_page() {
+	public void the_user_is_viewing_the_linked_list_introduction_page()
+	{
 	    
-	    throw new io.cucumber.java.PendingException();
+	   
 	}
 
 	@When("The user clicks {string} button")
@@ -68,7 +85,8 @@ public class LinedListStep
 	}
 
 	@When("The user clicks Run without entering code")
-	public void the_user_clicks_run_without_entering_code() {
+	public void the_user_clicks_run_without_entering_code()
+	{
 	   
 	    throw new io.cucumber.java.PendingException();
 	}
