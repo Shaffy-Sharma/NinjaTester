@@ -13,8 +13,10 @@ import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Allure;
 import java.io.ByteArrayInputStream;
+
+import utilities.ConfigReader;
 import utilities.LoggerLoad;
-import utilities.configReader;
+
 
 public class hooks 
 {
@@ -23,8 +25,8 @@ public class hooks
 
   @Before
   public void defineBrowser(Scenario scenario) throws Throwable {
-    configReader.readConfig();
-    driverFactory.initializeWebDriver(configReader.browserType());
+    ConfigReader.readConfig();
+    driverFactory.initializeWebDriver(ConfigReader.browserType());
 
 }
 
