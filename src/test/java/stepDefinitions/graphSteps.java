@@ -15,8 +15,6 @@ public class graphSteps
 	Graph_Page graph=new Graph_Page();
 
 	
-	
-
 	@When("user clicks on Graph getstarted")
 	public void user_clicks_on_graph_getstarted() 
 	{

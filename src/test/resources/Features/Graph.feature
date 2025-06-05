@@ -1,5 +1,6 @@
 
 @GraphPage
+
 Feature: Graph  page validation in  dsalgo
  Background: The user is logged in to DS Algo portal
     Given The user is on Signin page of DS Algo portal
