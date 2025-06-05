@@ -1,48 +1,57 @@
-Feature: Graph Module Functionality
 
-  Background: 
-    Given The user has successfully logged in and is on the Home page
-
-  Scenario: Verify that user is able to navigate to 'Graph' data structure page
-    When The user clicks the 'Get Started' button in Graph Panel OR selects Graph from the dropdown menu
-    Then The user should be directed to 'Graph' Data Structure Page
-
-  Scenario: Verify that user is able to navigate to 'Graph ' page
-    Given The user is currently viewing the Graph landing page
-    When The user clicks 'Graph ' link
-    Then The user should be redirected to 'Graph' page
-
-  Scenario: Verify that user is able to navigate to Try here Editor from Graph
-    Given The user accesses the Graph section from the main menu
-    When The user clicks 'Try Here' button
-    Then The user should be redirected to try editor with Run button
-
-  Scenario: Verify that it prevent the code execution when user clicking Run button without code
-    Given The user opens the code editor for the Graph module
-    When The user clicks Run without entering code
-    Then Prevent code execution when editor is blank
-
-  Scenario: Verify that user receives error for invalid python code
-    Given The user is in the code editor screen for Graph
-    When The user writes invalid code and clicks Run
-    Then The user should see an error message in alert window
-
-  Scenario: Verify that user is able to see output for valid python code
-    Given The user is testing valid code in the Graph editor
-    When The user writes valid code and clicks Run
-    Then The user should see output in the console
-
-  Scenario: Verify that user is able to navigate to 'Graph Representations' page
-    Given The user is exploring the Graph topic page
-    When The user clicks 'Graph Representations' link
-    Then The user should be redirected to 'Graph Representations' page
-
-  Scenario: Verify execution of code in Graph Representations page
-    Given The user is on the detailed page for Graph Representations
-    When The user clicks 'Try Here' button
-    Then The user should be redirected to try editor with Run button
-
-  Scenario: Verify that user is able to see output for valid python code
-    Given The user launches the editor from the Graph Representations page
-    When The user writes valid code and clicks Run
-    Then The user should see output in the console
+@GraphPage
+Feature: Graph  page validation in  dsalgo
+ Background: The user is logged in to DS Algo portal
+    Given The user is on Signin page of DS Algo portal
+    When The user enter valid "kodetesters" and "numpyninja24"
+    And The user click on login button
+    Then The user redirected to homepage
+    
+   Scenario: The user is navigate to Graph DS page
+     Given The user is on Home page after logged in
+     When user clicks on Graph getstarted
+     Then User redirected to "Graph" page 
+     
+    Scenario: User Should navigate to Graph Explanation Page
+    Given User is on the Graph page
+    When User clicks on Graph Link in Graph Page 
+    Then User redirected to "Graph" page
+    
+    Scenario: The user is able to navigate to try here page
+     Given User navigates to the Graph Graph page
+     When User click on try here link
+     Then User redirected to "Assessment" page
+     
+    Scenario: User is able to run the python code
+     Given User is on the try editor page
+     When User enters the Python Code 
+          | print"Implementation of Graph" |
+     And User clicks on run button
+     Then User is presented with Result 
+     
+    Scenario: User Should navigate to Graph Explanation Page
+    Given User is on the Graph page
+    When User clicks on Graph Representation in Graph Page 
+    Then User redirected to "Graph Representations" page
+    
+    Scenario: The user is able to navigate to try here page
+     Given User navigates to the Graph Representations page
+     When User click on try here link
+     Then User redirected to "Assessment" page
+     
+     Scenario: User is able to run the python code
+     Given User is on the try editor page
+     When User enters the Python Code 
+          | print"Implementation of Graph" |
+     And User clicks on run button
+     Then User is presented with Result 
+     
+     Scenario: User is able to navigate to Practice Questions page
+     Given User navigates to the Graph Representations page
+     When User clicks on Graph Practice Questions link
+     Then User redirected to Graph "Practice Questions" page
+     
+     Scenario: Successful LogOut
+    When User clicks on signout
+    Then Message displayed LoggedOut Successfully
+     
