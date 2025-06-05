@@ -3,7 +3,7 @@
 Feature: Graph  page validation in  dsalgo
  Background: The user is logged in to DS Algo portal
     Given The user is on Signin page of DS Algo portal
-    When The user enter valid "NinjaTesters" and "Welcome@123"
+    When The user enter valid "Ninjatester" and "Welcome@123"
     And The user click on login button
     Then The user redirected to homepage
     
