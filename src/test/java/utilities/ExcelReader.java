@@ -7,8 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+
 import org.apache.poi.ss.usermodel.*;
+import java.io.File;
+
 
 
 public class ExcelReader 
@@ -17,10 +19,14 @@ public class ExcelReader
 
     public List<Map<String, String>> getData(String excelFilePath, String sheetName)throws InvalidFormatException, IOException {
 
-        Workbook workbook = WorkbookFactory.create(new POIFSFileSystem());
-        Sheet sheet = workbook.getSheet(sheetName);
-        workbook.close();
-        return readSheet(sheet);
+
+ 	   // try-with-resources to ensure workbook is closed automatically
+     try (Workbook workbook = WorkbookFactory.create(new File(excelFilePath)))
+     {
+         Sheet sheet = workbook.getSheet(sheetName);
+         return readSheet(sheet);
+     }
+        
     }
 
     private List<Map<String, String>> readSheet(Sheet sheet) {
