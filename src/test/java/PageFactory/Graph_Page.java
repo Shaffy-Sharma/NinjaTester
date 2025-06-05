@@ -10,20 +10,17 @@ import utilities.ConfigReader;
 import utilities.LoggerLoad;
 import utilities.Utility_Methods;
 
+
 public class Graph_Page
 {
-	public WebDriver driver=DriverFactory.getDriver();
-    public 	Utility_Methods util=new Utility_Methods();
-	
-//	
-//	String homepage=ConfigReader.homePage();
-//    String graphurl=ConfigReader.getGraphUrl();
-//    String graphgraphurl=ConfigReader.getGraphGraphUrl();
-//    String graphrepresentationsurl=ConfigReader.getGraphRepresentationsUrl();
-//   
-	
-	
-	
+	public  WebDriver driver = DriverFactory.getDriver();
+    Utility_Methods utils=new Utility_Methods();
+
+    String homepage = ConfigReader.homePage();
+    String graphurl = ConfigReader.getGraphUrl();
+    String graphgraphurl = ConfigReader.getGraphGraphUrl();
+    String graphrepresentationsurl = ConfigReader.getGraphRepresentationsUrl();
+
 	@FindBy(xpath="//div[contains(@class,'card-body d-flex flex-column')]//h5[text()='Graph']/following-sibling::p[@class='card-text']/following-sibling::a")
 	WebElement GetStartedButtonLink;
 	
@@ -59,10 +56,7 @@ public class Graph_Page
 	
     @FindBy(xpath = "//div[contains(text(),'Logged out successfully')]")
     WebElement successLogout;
-	
-	
-	
-    public graphPage()
+    public Graph_Page()
     {
         PageFactory.initElements(driver, this);
     }
@@ -118,7 +112,7 @@ public class Graph_Page
         textEditor.sendKeys(pythonCode);
     }
     public String getOutput() {
-        util.waitForElement(OutputText);
+    	utils.waitForElement(OutputText);
         String output=OutputText.getText();
 
         return output;
@@ -133,5 +127,6 @@ public class Graph_Page
         return alert;
     }
 
-	
+
+
 }
