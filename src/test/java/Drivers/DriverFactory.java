@@ -8,12 +8,14 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import utilities.ConfigReader;
+
 public class DriverFactory 
 {
 
     // Thread-safe WebDriver instance
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-   // public static  ConfigReader configReader = new ConfigReader();
+    public static  ConfigReader configReader = new ConfigReader();
 
 
     // Initialize WebDriver
@@ -56,9 +58,10 @@ public class DriverFactory
         }
         return driver.get();
     }
-//    public static ConfigReader configReader() {
-//        return configReader();
-//    }
+    public static ConfigReader configReader()
+    {
+        return configReader();
+    }
 
     // Close the WebDriver
     public  void closeDriver() 
