@@ -1,23 +1,23 @@
 package PageFactory;
 
+import Drivers.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import utilities.LoggerLoad;
 
-import java.time.Duration;
 import java.util.List;
 
 public class Home_Page {
 
-    WebDriver driver;
+    public  WebDriver driver = DriverFactory.getDriver();
+
+    String url = "https://dsportalapp.herokuapp.com";
+    String homePageUrl = "https://dsportalapp.herokuapp.com/home";
+
     private final static Logger logger = LogManager.getLogger(Home_Page.class);
 
     //Locators
@@ -87,12 +87,24 @@ public class Home_Page {
 
 
     // initializing page objects
-    public Home_Page(WebDriver driver){
+    public Home_Page(){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     //Action methods
+    public void dsAlgoPortal() {
+        driver.get(url);
+
+    }
+
+    //Home Page Validations
+    //Home Page URL
+    public void homepage() {
+        driver.get(homePageUrl);
+
+    }
+
     public void validateUserLandedOnHomePage() {
         driver.getPageSource().contains("NumpyNinja");
         logger.info("User landed on Home page!");
@@ -131,6 +143,16 @@ public class Home_Page {
 //                .until(ExpectedConditions.elementToBeClickable(signIn)).click();
         Assert.assertEquals(driver.getTitle(),"Login");
         logger.info("User landed on Login page!");
+    }
+
+    public String loginPage() {
+        String title = driver.getTitle();
+        return title;
+    }
+
+    public String registerPage() {
+        String title = driver.getTitle();
+        return title;
     }
 
     public void validateMsgAfterLoginIn(String expectedLogInMsg){
