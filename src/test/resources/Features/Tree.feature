@@ -6,6 +6,11 @@ Feature: Tree
     When The user clicks login button after entering valid "username" and valid "password"
     Then  The user should land in Data Structure Home Page
 
+  Scenario: Verify that user is able to navigate to "Tree" page
+    Given The user is in the Home page after Sign in
+    When User clicks the Get Started button in the Tree page
+    Then  User should be redirected to the "Tree" page
+
   Scenario: Verify if user able to navigate "Overview of Trees" page
     Given The  user is on the Tree page after logged in
     When  The user clicks Overview of Trees link
