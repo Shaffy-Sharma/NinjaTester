@@ -17,7 +17,6 @@ public class LinkedListStep
 {
 	LinkedList_Page lList = new LinkedList_Page();
 
-
 	@When("The user selecting linkedlist item from the drop down menu")
 	public void the_user_selecting_linkedlist_item_from_the_drop_down_menu()
 	{
@@ -181,8 +180,6 @@ public class LinkedListStep
 	        assertEquals(title, string);
 
 	    }
-
-
 
 
 }
