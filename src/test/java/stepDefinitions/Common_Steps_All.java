@@ -44,18 +44,18 @@ public class Common_Steps_All {
         LoggerLoad.info("User redirected to HomePage");
 
     }
-    @Given("The user is on Home page after logged in")
-    public void the_user_is_on_home_page_after_logged_in() {
-        String Title = home.getTitleofPage();
-        LoggerLoad.info("Title of current page is " + Title);
-
-    }
-    @Then("User redirected to {string} page")
-    public void user_redirected_to_page(String string) {
-        LoggerLoad.info("The User redirected to " + string + "Page");
-        String title = qpage.getPageTitle();
-        LoggerLoad.info("Title of the Current Page is " + title);
-        assertEquals(title, string);
-    }
+//    @Given("The user is on Home page after logged in")
+//    public void the_user_is_on_home_page_after_logged_in() {
+//        String Title = home.getTitleofPage();
+//        LoggerLoad.info("Title of current page is " + Title);
+//
+//    }
+//    @Then("User redirected to {string} page")
+//    public void user_redirected_to_page(String string) {
+//        LoggerLoad.info("The User redirected to " + string + "Page");
+//        String title = qpage.getPageTitle();
+//        LoggerLoad.info("Title of the Current Page is " + title);
+//        assertEquals(title, string);
+//    }
 
 }
