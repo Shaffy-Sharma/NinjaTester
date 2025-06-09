@@ -7,16 +7,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import utilities.ConfigReader;
 
+import java.time.Duration;
 import java.util.List;
 
 public class Home_Page {
 
     public  WebDriver driver = DriverFactory.getDriver();
-
-    String url = "https://dsportalapp.herokuapp.com";
-    String homePageUrl = "https://dsportalapp.herokuapp.com/home";
+    private WebDriverWait wait;
+    String url = ConfigReader.applicationUrl();
+    String homePageUrl = ConfigReader.homePage();
 
     private final static Logger logger = LogManager.getLogger(Home_Page.class);
 
@@ -90,6 +94,7 @@ public class Home_Page {
     public Home_Page(){
         this.driver = driver;
         PageFactory.initElements(driver, this);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     //Action methods
@@ -286,6 +291,23 @@ public class Home_Page {
     }
 
     public void validateNavigationThroughDropdown(){
+        // Click on the dropdown
+        wait.until(ExpectedConditions.elementToBeClickable(dropDownDataStructure)).click();
+        logger.info("Clicked on 'Data Structures' dropdown");
 
+        // Find and click on the 'Arrays' option
+        for (WebElement option : dropDownDataStructuresOptions) {
+            if (option.getText().trim().equalsIgnoreCase("Arrays")) {
+                wait.until(ExpectedConditions.elementToBeClickable(option)).click();
+                logger.info("Clicked on 'Arrays' from dropdown");
+                break;
+            }
+        }
+        // Validate navigation to Array page
+        String expectedUrl = ConfigReader.arrayPageURL();
+        String actualUrl = driver.getCurrentUrl();
+        logger.info("Validating Array page URL...");
+        Assert.assertEquals("User not navigated to Arrays page!", expectedUrl, actualUrl);
+        logger.info("Successfully navigated to Arrays page: " + actualUrl);
     }
 }
