@@ -9,11 +9,11 @@ Feature: To verify and validate  User  Register page
 
   Scenario: To verify Register page with username only
     Given The user opens Register Page
-    When User click Register with username as "ninjatester" only
+    When User click Register with username as "NinjaTester" only
     Then User verify the message at password on Register Page as "Please fill out this field."
 
   Scenario: To verify Register Page with username and password
     Given The user opens Register Page
-    When User click Register with username as "ninjatester" and password as "numpyninja24" only
+    When User click Register with username as "NinjaTester" and password as "Welcome@123" only
     Then User verify the message at confirmpassword on Register Page as "Please fill out this field."
 
