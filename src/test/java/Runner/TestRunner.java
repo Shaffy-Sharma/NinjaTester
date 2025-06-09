@@ -10,7 +10,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 				"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" }, 
 		monochrome=false, 
-		tags = " ",
+		tags = "@stack",
 		features = {"src/test/resources/Features"}, 
 		glue= {"stepDefinitions","Hooks"})
 
