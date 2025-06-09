@@ -6,14 +6,28 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
-
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 public class ConfigReader 
 {
 	private static Properties properties;
     private final static String propertyFilePath = ".\\config\\config.properties";
-
+    private static Properties prop = new Properties();
+	private String username;
+	private String password;
+	
+    public String getusername() throws IOException {
+    	prop.load(ConfigReader.class.getClassLoader().getResourceAsStream("configuration.properties"));
+    	username = prop.getProperty("username");
+    	return username;
+    }
+    	
+    public String getpassword() throws IOException {
+    	prop.load(ConfigReader.class.getClassLoader().getResourceAsStream("configuration.properties"));
+    	password = prop.getProperty("password");
+    	return password;
+    }
+    	
     public static void readConfig() throws Throwable {
 
         InputStream fis;
