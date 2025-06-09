@@ -1,3 +1,4 @@
+@Queue
 Feature: Testing the Queue Module in dsAlgo Portal
 
 Scenario Outline: Verify that the user is able to land in Queue page
