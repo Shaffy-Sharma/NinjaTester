@@ -1,4 +1,4 @@
-
+@ninjaTester_homePage
 Feature: Homepage
 
   Background: The user is on the Home page

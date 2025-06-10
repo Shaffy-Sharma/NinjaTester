@@ -11,12 +11,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utilities.ConfigReader;
+import utilities.LoggerLoad;
 
 import java.time.Duration;
 import java.util.List;
 
 public class Home_Page {
-    private final static Logger logger = LogManager.getLogger(Home_Page.class);
 
     private  WebDriver driver;
     private WebDriverWait wait;
@@ -101,19 +101,19 @@ public class Home_Page {
 
     public void validateUserLandedOnHomePage() {
         driver.getPageSource().contains("NumpyNinja");
-        logger.info("User landed on Home page!");
+        LoggerLoad.info("User landed on Home page!");
     }
 
     public boolean getTitleOfPage(String expectedTitle) {
         String actualTitle = driver.getTitle();
-        logger.info("Validating page title. Expected: '{}', Actual: '{}'", expectedTitle, actualTitle);
+        LoggerLoad.info("Validating page title");
         return actualTitle.equals(expectedTitle);
     }
 
     public boolean validateWarningUserNotLoggedIn() {
         getStartedDataStrIntro.click();
         boolean errorDisplayed = userNotLoggedInWarning.isDisplayed();
-        logger.info("Error message displayed: {}", errorDisplayed);
+        LoggerLoad.info("Error message displayed: ");
         return errorDisplayed;
     }
 
@@ -121,14 +121,14 @@ public class Home_Page {
     public boolean isSignInAndRegisterVisible() {
         boolean signInVisible = signIn.isDisplayed();
         boolean registerVisible = register.isDisplayed();
-        logger.info("Sign In visible: {}, Register visible: {}", signInVisible, registerVisible);
+        LoggerLoad.info("Sign In visible: {}, Register visible: ");
         return signInVisible && registerVisible;
     }
 
     public void clickRegister() {
         register.click();
         Assert.assertEquals(driver.getTitle(),"Registration");
-        logger.info("User landed on Register page!");
+        LoggerLoad.info("User landed on Register page!");
     }
 
     public void clickSignIn(){
@@ -136,7 +136,7 @@ public class Home_Page {
 //        new WebDriverWait(driver, Duration.ofSeconds(5))
 //                .until(ExpectedConditions.elementToBeClickable(signIn)).click();
         Assert.assertEquals(driver.getTitle(),"Login");
-        logger.info("User landed on Login page!");
+        LoggerLoad.info("User landed on Login page!");
     }
 
     public String loginPage() {
@@ -152,7 +152,7 @@ public class Home_Page {
     public void validateMsgAfterLoginIn(String expectedLogInMsg){
         String actualLogInMsg = loginSuccessMsg.getText();
         Assert.assertEquals(actualLogInMsg,expectedLogInMsg, "Logged In message does not match");
-        logger.info("Validating Login message. Expected: '{}', Actual: '{}'", expectedLogInMsg, actualLogInMsg);
+        LoggerLoad.info("Validating Login message.");
     }
 
     public void validateMsgAfterRegistration(String message, String username) {
@@ -160,27 +160,27 @@ public class Home_Page {
         String expectedMsg = String.format("%s %s", message.trim(), username.trim());
 
         Assert.assertEquals(actualMsg , expectedMsg);
-        logger.info("Validating registration message. Expected: '{}', Actual: '{}'", expectedMsg, actualMsg);
+        LoggerLoad.info("Validating registration message.");
     }
 
     public void validateMsgAfterLogout(String expectedLogoutMsg){
         String actualLogoutMsg = logoutSuccessMsg.getText().trim();
         Assert.assertEquals(actualLogoutMsg, expectedLogoutMsg, "Logout message does not match.");
-        logger.info("Validating Login message. Expected: '{}', Actual: '{}'", expectedLogoutMsg, actualLogoutMsg);
+        LoggerLoad.info("Validating Login message. Expected: ");
     }
 
 
     //Drop down
     public boolean isGetStartedButtonDisplayed() {
         boolean displayed = getStartedButton.isDisplayed();
-        logger.info("'Get Started' button displayed: {}", displayed);
+        LoggerLoad.info("'Get Started' button displayed: ");
         return displayed;
     }
 
     public boolean isDropdownVisible() {
         dropDownDataStructure.click();
         boolean visible = dropDownArray.isDisplayed();
-        logger.info("Dropdown options visible: {}", visible);
+        LoggerLoad.info("Dropdown options visible: ");
         return visible;
     }
 
@@ -197,12 +197,12 @@ public class Home_Page {
             String actualText = dataStructuresOptions.get(i).getText().trim();
             String expectedText = expectedOptions[i];
 
-            logger.info("Validating dropdown option {}: Expected='{}', Actual='{}'", i + 1, expectedText, actualText);
+            LoggerLoad.info("Validating dropdown option: ");
             Assert.assertEquals(actualText, expectedText,
                     String.format("Dropdown option at index %d does not match. Expected='%s', Actual='%s'", i, expectedText, actualText));
         }
 
-        logger.info("All Data Structures dropdown options validated successfully.");
+        LoggerLoad.info("All Data Structures dropdown options validated successfully.");
     }
 
     public void validateEachDropdownInHomePage(String string) {
@@ -210,31 +210,31 @@ public class Home_Page {
 
         switch (string) {
             case "Arrays":
-                logger.info("User clicked on '{}'" + string);
+                LoggerLoad.info("User clicked on '{}'" + string);
                 dropDownArray.click();
                 break;
             case "Linked List":
-                logger.info("User clicked on '{}'" + string);
+                LoggerLoad.info("User clicked on '{}'" + string);
                 dropDownLinkedList.click();
                 break;
             case "Stack":
-                logger.info("User clicked on '{}'" + string);
+                LoggerLoad.info("User clicked on '{}'" + string);
                 dropDownStack.click();
                 break;
             case "Queue":
-                logger.info("User clicked on '{}'" + string);
+                LoggerLoad.info("User clicked on '{}'" + string);
                 dropDownQueue.click();
                 break;
             case "Tree":
-                logger.info("User clicked on '{}'" + string);
+                LoggerLoad.info("User clicked on '{}'" + string);
                 dropDownTree.click();
                 break;
             case "Graph":
-                logger.info("User clicked on '{}'" + string);
+                LoggerLoad.info("User clicked on '{}'" + string);
                 dropDownGraph.click();
                 break;
             default:
-                logger.warn("Invalid dropdown option: '{}'" + string);
+                LoggerLoad.warn("Invalid dropdown option: '{}'" + string);
                 break;
         }
     }
@@ -249,31 +249,31 @@ public class Home_Page {
 
         switch (string) {
             case "Data Structures-Introduction":
-                logger.info("Click '{}' link on Data Structures" + getStartedDataStrIntro.getText());
+                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedDataStrIntro.getText());
                 getStartedDataStrIntro.click();
                 break;
             case "Arrays":
-                logger.info("Click '{}' link on Data Structures" + getStartedArray.getText());
+                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedArray.getText());
                 getStartedArray.click();
                 break;
             case "Linked List":
-                logger.info("Click '{}' link on Data Structures" + getStartedLinkedList.getText());
+                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedLinkedList.getText());
                 getStartedLinkedList.click();
                 break;
             case "Stack":
-                logger.info("Click '{}' link on Data Structures" + getStartedStack.getText());
+                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedStack.getText());
                 getStartedStack.click();
                 break;
             case "Queue":
-                logger.info("Click '{}' link on Data Structures" + getStartedQueue.getText());
+                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedQueue.getText());
                 getStartedQueue.click();
                 break;
             case "Tree":
-                logger.info("Click '{}' link on Data Structures" + getStartedTree.getText());
+                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedTree.getText());
                 getStartedTree.click();
                 break;
             case "Graph":
-                logger.info("Click '{}' link on Data Structures" + getStartedGraph.getText());
+                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedGraph.getText());
                 getStartedGraph.click();
                 break;
         }
@@ -282,21 +282,21 @@ public class Home_Page {
     public void validateNavigationThroughDropdown(){
         // Click on the dropdown
         wait.until(ExpectedConditions.elementToBeClickable(dropDownDataStructure)).click();
-        logger.info("Clicked on 'Data Structures' dropdown");
+        LoggerLoad.info("Clicked on 'Data Structures' dropdown");
 
         // Find and click on the 'Arrays' option
         for (WebElement option : dropDownDataStructuresOptions) {
             if (option.getText().trim().equalsIgnoreCase("Arrays")) {
                 wait.until(ExpectedConditions.elementToBeClickable(option)).click();
-                logger.info("Clicked on 'Arrays' from dropdown");
+                LoggerLoad.info("Clicked on 'Arrays' from dropdown");
                 break;
             }
         }
         // Validate navigation to Array page
         String expectedUrl = ConfigReader.arrayPageURL();
         String actualUrl = driver.getCurrentUrl();
-        logger.info("Validating Array page URL...");
+        LoggerLoad.info("Validating Array page URL...");
         Assert.assertEquals("User not navigated to Arrays page!", expectedUrl, actualUrl);
-        logger.info("Successfully navigated to Arrays page: " + actualUrl);
+        LoggerLoad.info("Successfully navigated to Arrays page: " + actualUrl);
     }
 }

@@ -1,8 +1,6 @@
 package PageFactory;
 
 import Drivers.DriverFactory;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -16,15 +14,12 @@ import java.time.Duration;
 
 public class Tree_Page {
 
-    private final static Logger logger = LogManager.getLogger(Tree_Page.class);
 
     public WebDriver driver;
     private WebDriverWait wait;
-    Utility_Methods util=new Utility_Methods();
+    Utility_Methods util = new Utility_Methods();
 
     private String homepageUrl = ConfigReader.homePage();
-    private String  getTreeUrl = ConfigReader.getTreeUrl();
-    private String tryEditorUrl = ConfigReader.tryEditorURL();
 
     // initializing page objects
     public Tree_Page() {
@@ -104,13 +99,13 @@ public class Tree_Page {
 
     public boolean isOnExpectedURL(String expectedUrl) {
         String actualUrl = driver.getCurrentUrl();
-        logger.info("Validating URL: Expected '{}', Actual '{}'", expectedUrl, actualUrl);
+        LoggerLoad.info("Validating page Url");
         return actualUrl.equals(expectedUrl);
     }
 
     public boolean getTitleOfPage(String expectedTitle) {
         String actualTitle = driver.getTitle();
-        logger.info("Validating page title. Expected: '{}', Actual: '{}'", expectedTitle, actualTitle);
+        LoggerLoad.info("Validating page title");
         return actualTitle.equals(expectedTitle);
     }
 
@@ -119,84 +114,84 @@ public class Tree_Page {
     }
 
     public void verifyOverviewOfTreeLink() {
-        logger.info("User Clicks on Overview of Tree link");
+        LoggerLoad.info("User Clicks on Overview of Tree link");
         overviewOfTrees.click();
     }
 
     public void verifyTerminologyLink() {
-        logger.info("User Clicks on Terminologies link");
+        LoggerLoad.info("User Clicks on Terminologies link");
         terminologies.click();
     }
 
     public void verifyTypesOfTreeLink() {
-        logger.info("User Clicks on Types of tree link");
+        LoggerLoad.info("User Clicks on Types of tree link");
         typesOfTrees.click();
     }
 
     public void verifyTreeTraversalLink() {
-        logger.info("User Clicks on  tree traversal link");
+        LoggerLoad.info("User Clicks on  tree traversal link");
         treeTraversals.click();
     }
 
     public void verifyTravelIllustrateLink() {
-        logger.info("User Clicks on  traversal Illustration  link");
+        LoggerLoad.info("User Clicks on  traversal Illustration  link");
         traversalsIllustration.click();
     }
 
     public void verifyBinaryTreeLink() {
-        logger.info("User Clicks on  Binary Tree link");
+        LoggerLoad.info("User Clicks on  Binary Tree link");
         binaryTrees.click();
     }
 
     public void verifyTypesOfBinaryLink() {
-        logger.info("User Clicks on types of Binary tree link");
+        LoggerLoad.info("User Clicks on types of Binary tree link");
         typesOfBinaryTrees.click();
     }
 
     public void verifyImplementPythonLink() {
-        logger.info("User Clicks on Implementation of Python link");
+        LoggerLoad.info("User Clicks on Implementation of Python link");
         implementationInPython.click();
     }
 
     public void verifyBinaryTreeTraversalsLink() {
-        logger.info("User Clicks on Binary tree traversal link");
+        LoggerLoad.info("User Clicks on Binary tree traversal link");
         binaryTreeTraversals.click();
     }
 
     public void verifyImplementationOfBinaryTreesLink() {
-        logger.info("User Clicks on Implementation of Binary Trees link");
+        LoggerLoad.info("User Clicks on Implementation of Binary Trees link");
         implementationOfBinaryTrees.click();
     }
 
     public void verifyApplicationsOfBinaryTreesLink() {
-        logger.info("User Clicks on Applications of Binary Trees link");
+        LoggerLoad.info("User Clicks on Applications of Binary Trees link");
         applicationsOfBinaryTrees.click();
     }
 
     public void verifyBinarySearchTreesLink() {
-        logger.info("User Clicks on  Binary Search Trees link");
+        LoggerLoad.info("User Clicks on  Binary Search Trees link");
         binarySearchTrees.click();
     }
 
     public void verifyImplementationOfBSTLink() {
-        logger.info("User Clicks on Implementation of Binary Search Trees link");
+        LoggerLoad.info("User Clicks on Implementation of Binary Search Trees link");
         implementationOfBST.click();
     }
 
     public void verifyTryHereLink() {
-        logger.info("User Clicks on Try Here button");
+        LoggerLoad.info("User Clicks on Try Here button");
         tryHere.click();
     }
 
     public String outputConsole() {
             String result = output.getText().trim();
-            logger.info("Fetched output from console: '{}'", result);
+            LoggerLoad.info("Fetched output from console");
             return result;
     }
 
     public void enterCode(String pythonCode) throws InterruptedException {
         textEditor.sendKeys(pythonCode);
-        logger.info("User enters Python code");
+        LoggerLoad.info("User enters Python code");
     }
 
     public WebElement getTextEditor() {
@@ -205,22 +200,22 @@ public class Tree_Page {
 
     public void clickRunButton() {
         runBtn.click();
-        logger.info("User Clicked Run button");
+        LoggerLoad.info("User Clicked Run button");
     }
 
     public void verifyEditorOutput() {
         try {
             Alert alert = wait.until(ExpectedConditions.alertIsPresent());
             String alertMessage = alert.getText();
-            logger.warn("Alert message displayed: {}", alertMessage);
+            LoggerLoad.warn("Alert message displayed: ");
             alert.accept();
         } catch (TimeoutException e) {
             try {
                 wait.until(ExpectedConditions.visibilityOf(output));
                 String codeOutput = output.getText();
-                logger.info("Code output displayed: {}", codeOutput);
+                LoggerLoad.info("Code output displayed: ");
             } catch (TimeoutException ex) {
-                logger.error("No output element found or no output generated.");
+                LoggerLoad.error("No output element found or no output generated.");
             }
         }
     }
@@ -232,13 +227,59 @@ public class Tree_Page {
     }
 
     public void verifyPracticeQuestionsLink() {
-        logger.info("User Clicks the Practice Questions link");
+        LoggerLoad.info("User Clicks the Practice Questions link");
         practiceQuestions.click();
     }
 
-    public void navigateToHomePage() {
-        driver.get(homepageUrl);
-        logger.info("Navigated to homepage: " + homepageUrl);
-    }
+    public void navigateToTreeTopic(String topicKey) {
+        String url;
 
+        switch (topicKey) {
+            case "tree":
+                url = ConfigReader.getTreeUrl();
+                break;
+            case "overviewOfTrees":
+                url = ConfigReader.getOverviewOfTreesUrl();
+                break;
+            case "terminologies":
+                url = ConfigReader.getTerminologiesUrl();
+                break;
+            case "typesOfTrees":
+                url = ConfigReader.getTypesOfTreesUrl();
+                break;
+            case "treeTraversals":
+                url = ConfigReader.getTreeTraversalsUrl();
+                break;
+            case "traversalsIllustration":
+                url = ConfigReader.getTraversalsIllustrationUrl();
+                break;
+            case "binaryTrees":
+                url = ConfigReader.getBinaryTreesUrl();
+                break;
+            case "typesOfBinaryTrees":
+                url = ConfigReader.getTypesOfBinaryTreesUrl();
+                break;
+            case "implementationInPython":
+                url = ConfigReader.getImplementationInPythonUrl();
+                break;
+            case "binaryTreeTraversals":
+                url = ConfigReader.getBinaryTreeTraversalsUrl();
+                break;
+            case "implementationOfBinaryTrees":
+                url = ConfigReader.getImplementationOfBinaryTreesUrl();
+                break;
+            case "applicationsOfBinaryTrees":
+                url = ConfigReader.getApplicationsOfBinaryTreesUrl();
+                break;
+            case "binarySearchTrees":
+                url = ConfigReader.getBinarySearchTreesUrl();
+                break;
+            case "implementationOfBST":
+                url = ConfigReader.getImplementationOfBSTUrl();
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid Tree topic key: " + topicKey);
+        }
+        driver.get(url);
+    }
 }

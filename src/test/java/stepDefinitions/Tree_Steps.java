@@ -6,8 +6,6 @@ import PageFactory.Tree_Page;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -89,7 +87,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Overview of Trees Page")
     public void the_user_is_in_the_overview_of_trees_page() {
-
+        treePage.navigateToTreeTopic("overviewOfTrees");
+        LoggerLoad.info("User is on the Overview of Trees page.");
     }
 
 //    @When("The user clicks Try Here button in Tree page")
@@ -173,7 +172,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Terminologies page")
     public void the_user_is_in_the_terminologies_page() {
-
+        treePage.navigateToTreeTopic("terminologies");
+        LoggerLoad.info("User is on the terminologies page.");
     }
 
     @When("The user clicks Try Here button in Tree Page")
@@ -218,7 +218,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Types of Trees Page")
     public void the_user_is_in_the_types_of_trees_page() {
-
+        treePage.navigateToTreeTopic("typesOfTrees");
+        LoggerLoad.info("User is on the types Of Trees page.");
     }
 
     @When("The User writes valid python code in Tree Page")
@@ -252,7 +253,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Tree Traversals Page")
     public void the_user_is_in_the_tree_traversals_page() {
-
+        treePage.navigateToTreeTopic("treeTraversals");
+        LoggerLoad.info("User is on the tree traversals page.");
     }
 
     @When("The user clicks Traversals-Illustration link")
@@ -269,7 +271,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Traversals-Illustration Page")
     public void the_user_is_in_the_traversals_illustration_page() {
-
+        treePage.navigateToTreeTopic("traversalsIllustration");
+        LoggerLoad.info("User is on the traversals Illustration page.");
     }
 
     @When("The user clicks Binary Trees link")
@@ -286,7 +289,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Binary Trees Page")
     public void the_user_is_in_the_binary_trees_page() {
-
+        treePage.navigateToTreeTopic("binaryTrees");
+        LoggerLoad.info("User is on the binary trees page.");
     }
 
     @When("The user clicks Types of Binary Trees link")
@@ -302,7 +306,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Types of Binary Trees Page")
     public void the_user_is_in_the_types_of_binary_trees_page() {
-
+        treePage.navigateToTreeTopic("typesOfBinaryTrees");
+        LoggerLoad.info("User is on the types Of Binary Trees page.");
     }
 
     @When("The user clicks Implementation in Python link")
@@ -319,7 +324,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Implementation in Python Page")
     public void the_user_is_in_the_implementation_in_python_page() {
-
+        treePage.navigateToTreeTopic("implementationInPython");
+        LoggerLoad.info("User is on the types Of implementation in python page.");
     }
 
     @When("The user clicks Binary Tree Traversals link")
@@ -336,7 +342,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Binary Tree Traversals Page")
     public void the_user_is_in_the_binary_tree_traversals_page() {
-
+        treePage.navigateToTreeTopic("binaryTreeTraversals");
+        LoggerLoad.info("User is on the types Of binary Tree Traversals page.");
     }
 
     @When("The user clicks Implementation of Binary Trees link")
@@ -353,7 +360,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Implementation of Binary Trees Page")
     public void the_user_is_in_the_implementation_of_binary_trees_page() {
-
+        treePage.navigateToTreeTopic("implementationOfBinaryTrees");
+        LoggerLoad.info("User is on the types Of implementation Of Binary Trees page.");
     }
 
     @When("The user clicks Applications of Binary trees link")
@@ -370,7 +378,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Applications of Binary trees Page")
     public void the_user_is_in_the_applications_of_binary_trees_page() {
-
+        treePage.navigateToTreeTopic("applicationsOfBinaryTrees");
+        LoggerLoad.info("User is on the types Of applications Of Binary Trees page.");
     }
 
     @When("The user clicks Binary Search Trees link")
@@ -387,7 +396,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Binary Search Trees Page")
     public void the_user_is_in_the_binary_search_trees_page() {
-
+        treePage.navigateToTreeTopic("binarySearchTrees");
+        LoggerLoad.info("User is on the types Of binary Search Trees page.");
     }
 
     @When("The user clicks Implementation Of BST link")
@@ -404,7 +414,8 @@ public class Tree_Steps {
 
     @Given("The user is in the Implementation Of BST Page")
     public void the_user_is_in_the_implementation_of_bst_page() {
-
+        treePage.navigateToTreeTopic("implementationOfBST");
+        LoggerLoad.info("User is on the types Of implementation Of BST page.");
     }
 
     @When("The user clicks Trees Practice Questions link")
