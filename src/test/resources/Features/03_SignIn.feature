@@ -14,7 +14,7 @@ Feature: SignIn Action
 
   Scenario: To verify SignIn with username only
     Given User is on SignIn page
-    When User clicks on login button with username as "kode" only
+    When User clicks on login button with username as "Ninj" only
     Then User verify the message at password as "Please fill out this field."
 
   Scenario: To verify SignIn with password only
@@ -30,8 +30,8 @@ Feature: SignIn Action
     Then User verify the message as "Invalid Username and Password"
 
     Examples:
-      | username    | password   |
-      | ninjatester | numpyninja |
+      | username    | password    |
+      | NinjaTester | Welcome@123 |
 
   Scenario Outline: User  Login with  valid "<username>" and "<password>"
     Given User is on SignIn page
