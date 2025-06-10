@@ -99,12 +99,11 @@ public class Home_Steps {
 
     @Then("The user should redirected to Array page")
     public void the_user_should_redirected_to_array_page() {
-
+        homePage.validateNavigationThroughDropdown();
     }
 
     @When("The user clicks on Arrays {string} button on homepage")
     public void the_user_clicks_on_arrays_button_on_homepage(String string) {
-
+        homePage.clickGetStartedOnHomePage("Arrays");
     }
-
 }
