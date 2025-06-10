@@ -1,3 +1,4 @@
+@Stack
 Feature: Testing the Stack Module in dsAlgo Portal
 
 Scenario Outline: Verify the user is able to navigate the Stack page.
