@@ -1,10 +1,10 @@
-@regression
-Feature: Tree
+
+Feature: TreePage
 
   Background: Verify if user is logged in
     Given The user is on the DS Algo SignIn Page
     When The user clicks login button after entering valid "username" and valid "password"
-    Then  The user should land in Data Structure Home Page
+    Then  The user should land on Home Page
 
   Scenario: Verify that user is able to navigate to "Tree" page
     Given The user is in the Home page after Sign in
@@ -14,7 +14,7 @@ Feature: Tree
   Scenario: Verify if user able to navigate "Overview of Trees" page
     Given The  user is on the Tree page after logged in
     When  The user clicks Overview of Trees link
-    Then  The user should be redirected to Overview of Trees page
+    Then  The user should be redirected to the Overview of Trees page
 
   Scenario: Verify if user able to to redirect to a "tryEditor" page from overview of trees page
     Given The user is in the Overview of Trees Page
@@ -36,7 +36,7 @@ Feature: Tree
   Scenario: Verify if user able to navigate to "Terminologies" page
     Given The  user is on the Tree page after logged in
     When The user clicks Terminologies link in tree page
-    Then The user should be redirected to Terminologies Page
+    Then The user should be redirected to the Terminologies Page
 
   Scenario: Verify if user able to to redirect to a "tryEditor" page from Terminologies page
     Given The user is in the Terminologies page
@@ -58,7 +58,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Types of Trees"
     Given The  user is on the Tree page after logged in
     When  The user clicks Types of Trees link
-    Then  The user should be redirected to Types of Trees Page
+    Then  The user should be redirected to the Types of Trees Page
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Types of Trees Page
@@ -80,7 +80,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Tree Traversals"
     Given The  user is on the Tree page after logged in
     When  The user clicks Tree Traversals link
-    Then  The user should be redirected to Tree Traversals Page
+    Then  The user should be redirected to the Tree Traversals Page
 
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
@@ -103,7 +103,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Traversals-Illustration"
     Given The  user is on the Tree page after logged in
     When  The user clicks Traversals-Illustration link
-    Then  The user should be redirected to Traversals-Illustration Page
+    Then  The user should be redirected to the Traversals-Illustration Page
 
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
@@ -125,7 +125,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Binary Trees"
     Given The  user is on the Tree page after logged in
     When  The user clicks Binary Trees link
-    Then  The user should be redirected to Binary Trees Page
+    Then  The user should be redirected to the Binary Trees Page
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Binary Trees Page
@@ -146,7 +146,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Types of Binary Trees"
     Given The  user is on the Tree page after logged in
     When The user clicks Types of Binary Trees link
-    Then The user should be redirected to Types of Binary Trees Page
+    Then The user should be redirected to the Types of Binary Trees Page
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Types of Binary Trees Page
@@ -167,7 +167,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Implementation in Python"
     Given The  user is on the Tree page after logged in
     When The user clicks Implementation in Python link
-    Then The user should be redirected to Implementation in Python Page
+    Then The user should be redirected to the Implementation in Python Page
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Implementation in Python Page
@@ -189,7 +189,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Binary Tree Traversals"
     Given The  user is on the Tree page after logged in
     When The user clicks Binary Tree Traversals link
-    Then The user should be redirected to Binary Tree Traversals Page
+    Then The user should be redirected to the Binary Tree Traversals Page
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Binary Tree Traversals Page
@@ -211,7 +211,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Implementation of Binary Trees"
     Given The  user is on the Tree page after logged in
     When The user clicks Implementation of Binary Trees link
-    Then The user should be redirected to Implementation of Binary Trees Page
+    Then The user should be redirected to the Implementation of Binary Trees Page
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Implementation of Binary Trees Page
@@ -232,7 +232,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Applications of Binary trees"
     Given The  user is on the Tree page after logged in
     When The user clicks Applications of Binary trees link
-    Then The user should be redirected to Applications of Binary trees Page
+    Then The user should be redirected to the Applications of Binary trees Page
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Applications of Binary trees Page
@@ -253,7 +253,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Binary Search Trees"
     Given The  user is on the Tree page after logged in
     When The user clicks Binary Search Trees link
-    Then The user should be redirected to Binary Search Trees Page
+    Then The user should be redirected to the Binary Search Trees Page
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Binary Search Trees Page
@@ -274,7 +274,7 @@ Feature: Tree
   Scenario: Verify if user able to direct to "Implementation Of BST"
     Given The  user is on the Tree page after logged in
     When The user clicks Implementation Of BST link
-    Then The user should be redirected to Implementation Of BST Page
+    Then The user should be redirected to the Implementation Of BST Page
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Implementation Of BST Page

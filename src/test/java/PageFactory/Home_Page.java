@@ -16,18 +16,23 @@ import java.time.Duration;
 import java.util.List;
 
 public class Home_Page {
-
-    public  WebDriver driver = DriverFactory.getDriver();
-    private WebDriverWait wait;
-    String url = ConfigReader.applicationUrl();
-    String homePageUrl = ConfigReader.homePage();
-
     private final static Logger logger = LogManager.getLogger(Home_Page.class);
+
+    private  WebDriver driver;
+    private WebDriverWait wait;
+    private String url = ConfigReader.applicationUrl();
+    private String homePageUrl = ConfigReader.homePage();
+
+    // initializing page objects
+    public Home_Page(){
+        this.driver = DriverFactory.getDriver();
+        PageFactory.initElements(driver, this);
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
     //Locators
     @FindBy(xpath ="//button[text()='Get Started']")
     private WebElement getStartedButton;
-
 
     //Registration, SignIn, SignOut
     @FindBy (xpath="//a[@href ='/register']")
@@ -40,7 +45,6 @@ public class Home_Page {
     @FindBy(linkText ="NumpyNinja")
     WebElement NumpyNinjaLink;
 
-
     //Error and success text
     @FindBy (xpath = "//div[@role='alert']")
     private WebElement userNotLoggedInWarning;
@@ -51,11 +55,9 @@ public class Home_Page {
     @FindBy(xpath ="//div[@class='alert alert-primary']" )
     private WebElement logoutSuccessMsg;
 
-
     //dropdown
     @FindBy(xpath = "//div[@class='dropdown-menu']//a[@class='dropdown-item']")
     private List<WebElement> dropDownDataStructuresOptions;
-
 
     @FindBy(xpath="//a[@class='nav-link dropdown-toggle']")
     private WebElement dropDownDataStructure;
@@ -71,7 +73,6 @@ public class Home_Page {
     private WebElement dropDownTree;
     @FindBy (xpath="//div[@class='dropdown-menu show']/a[6]")
     private WebElement dropDownGraph;
-
 
     //Home Page
     @FindBy (xpath = "//a[@href ='data-structures-introduction']")
@@ -90,24 +91,12 @@ public class Home_Page {
     private WebElement getStartedQueue;
 
 
-    // initializing page objects
-    public Home_Page(){
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
-
     //Action methods
-    public void dsAlgoPortal() {
-        driver.get(url);
+    public void dsAlgoPortal() { driver.get(url); }
 
-    }
-
-    //Home Page Validations
     //Home Page URL
     public void homepage() {
         driver.get(homePageUrl);
-
     }
 
     public void validateUserLandedOnHomePage() {

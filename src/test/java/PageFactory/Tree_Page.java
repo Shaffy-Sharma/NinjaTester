@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utilities.ConfigReader;
 import utilities.LoggerLoad;
+import utilities.Utility_Methods;
 
 import java.time.Duration;
 
@@ -17,16 +18,24 @@ public class Tree_Page {
 
     private final static Logger logger = LogManager.getLogger(Tree_Page.class);
 
-    public WebDriver driver = DriverFactory.getDriver();
+    public WebDriver driver;
+    private WebDriverWait wait;
+    Utility_Methods util=new Utility_Methods();
 
-    private String homepage = ConfigReader.homePage();
+    private String homepageUrl = ConfigReader.homePage();
     private String  getTreeUrl = ConfigReader.getTreeUrl();
     private String tryEditorUrl = ConfigReader.tryEditorURL();
-    private String  loginUrl = ConfigReader.loginPage();
+
+    // initializing page objects
+    public Tree_Page() {
+        this.driver = DriverFactory.getDriver();
+        PageFactory.initElements(driver,this);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
 
     //Locators
-    @FindBy(xpath= "//a[@href='tree']")
-    private WebElement treeGetStartedBtn;
+//  @FindBy(xpath= "//a[@href='tree']")
+//  private WebElement treeGetStartedBtn;
     @FindBy(xpath= "//a[text()='Tree']")
     private WebElement treeTitle;
     @FindBy(xpath="//a[text()='Overview of Trees']")
@@ -67,21 +76,30 @@ public class Tree_Page {
     private WebElement practiceQuestions;
     @FindBy(xpath="//a[text()='Sign out']")
     private WebElement SignOut;
-   
-    private WebDriverWait wait;
 
+    //login page
+    @FindBy(xpath="//input[@value='Login']")
+    private WebElement loginBtn;
+    @FindBy(xpath="//input[@id='id_username']")
+    private WebElement usernameInput;
+    @FindBy(xpath="//input[@id='id_password']")
+    private WebElement passwordInput;
 
-    // initializing page objects
-    public Tree_Page() {
-        this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        PageFactory.initElements(driver,this);
-    }
 
     //Action methods
-    public void clickTreeGetStarted() {
-        logger.info("User Click the tree Get Started Button");
-        treeGetStartedBtn.click();
+//    public void clickTreeGetStarted() {
+//        logger.info("User Click the tree Get Started Button");
+//        treeGetStartedBtn.click();
+//    }
+
+    public void login(String username, String password){
+        usernameInput.clear();
+        usernameInput.sendKeys(username);
+
+        passwordInput.clear();
+        passwordInput.sendKeys(password);
+
+        loginBtn.click();
     }
 
     public boolean isOnExpectedURL(String expectedUrl) {
@@ -110,7 +128,7 @@ public class Tree_Page {
         terminologies.click();
     }
 
-    public void verifyTypesOFTreeLink() {
+    public void verifyTypesOfTreeLink() {
         logger.info("User Clicks on Types of tree link");
         typesOfTrees.click();
     }
@@ -160,7 +178,7 @@ public class Tree_Page {
         binarySearchTrees.click();
     }
 
-    public void verifyImplementationOfBST() {
+    public void verifyImplementationOfBSTLink() {
         logger.info("User Clicks on Implementation of Binary Search Trees link");
         implementationOfBST.click();
     }
@@ -170,19 +188,24 @@ public class Tree_Page {
         tryHere.click();
     }
 
-    public void enterCode(String pythonCode) throws InterruptedException {
-        logger.info("User enters Python code");
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.visibilityOf(textEditor))
-                .sendKeys(pythonCode);
+    public String outputConsole() {
+            String result = output.getText().trim();
+            logger.info("Fetched output from console: '{}'", result);
+            return result;
     }
 
-    public void clickRunButton() throws InterruptedException {
-        logger.info("User Clicked Run button");
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.elementToBeClickable(runBtn))
-                .click();
+    public void enterCode(String pythonCode) throws InterruptedException {
+        textEditor.sendKeys(pythonCode);
+        logger.info("User enters Python code");
+    }
 
+    public WebElement getTextEditor() {
+        return textEditor;
+    }
+
+    public void clickRunButton() {
+        runBtn.click();
+        logger.info("User Clicked Run button");
     }
 
     public void verifyEditorOutput() {
@@ -214,8 +237,8 @@ public class Tree_Page {
     }
 
     public void navigateToHomePage() {
-        driver.get(homepage);
-        logger.info("Navigated to homepage: " + homepage);
+        driver.get(homepageUrl);
+        logger.info("Navigated to homepage: " + homepageUrl);
     }
 
 }
