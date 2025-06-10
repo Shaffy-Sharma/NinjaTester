@@ -14,6 +14,8 @@ public class Common_Steps_All {
     Array_Page array=new Array_Page();
     Queue_Page qpage=new Queue_Page();
    // Tree_Page treepage=new Tree_Page();
+    Graph_Page graph = new Graph_Page();
+
 
     @Given("The user is on Signin page of DS Algo portal")
     public void the_user_is_on_signin_page_of_ds_algo_portal() {

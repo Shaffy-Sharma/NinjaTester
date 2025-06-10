@@ -11,17 +11,17 @@ Feature: Graph  page validation in  dsalgo
    Scenario: The user is navigate to Graph DS page
      Given The user is on Home page after logged in
      When user clicks on Graph getstarted
-     Then User redirected to "Graph" page 
+     Then User redirected to  "Graph" page
      
     Scenario: User Should navigate to Graph Explanation Page
     Given User is on the Graph page
     When User clicks on Graph Link in Graph Page 
-    Then User redirected to "Graph" page
+    Then User redirected to  "Graph" page
     
     Scenario: The user is able to navigate to try here page
      Given User navigates to the Graph Graph page
      When User click on try here link
-     Then User redirected to "Assessment" page
+   Then User redirected to  "Assessment" page
      
     Scenario: User is able to run the python code
      Given User is on the try editor page
@@ -33,12 +33,12 @@ Feature: Graph  page validation in  dsalgo
     Scenario: User Should navigate to Graph Explanation Page
     Given User is on the Graph page
     When User clicks on Graph Representation in Graph Page 
-    Then User redirected to "Graph Representations" page
+    Then User redirected to  "Graph Representations" page
     
     Scenario: The user is able to navigate to try here page
      Given User navigates to the Graph Representations page
      When User click on try here link
-     Then User redirected to "Assessment" page
+     Then User redirected to  "Assessment" page
      
      Scenario: User is able to run the python code
      Given User is on the try editor page
@@ -50,8 +50,7 @@ Feature: Graph  page validation in  dsalgo
      Scenario: User is able to navigate to Practice Questions page
      Given User navigates to the Graph Representations page
      When User clicks on Graph Practice Questions link
-     Then User redirected to Graph "Practice Questions" page
-     
+        Then User redirected to  "Practice Questions" page
      Scenario: Successful LogOut
     When User clicks on signout
     Then Message displayed LoggedOut Successfully

@@ -127,6 +127,10 @@ public class Graph_Page
         return alert;
     }
 
+    public void clickRunButton() {
+        RunButton.click();
+        LoggerLoad.info("User clicked on Run button");
+    }
 
 
 }
