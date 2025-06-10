@@ -1,4 +1,8 @@
-
+logs/
+Reports/
+allure-results/
+ExtentReports/
+test-output/
 target/ 
 *.log
 !.mvn/wrapper/maven-wrapper.jar
