@@ -13,13 +13,11 @@ import static org.testng.Assert.assertEquals;
 
 public class Home_Steps {
 
-    private final static Logger logger = LogManager.getLogger(Home_Steps.class);
-
     Home_Page homePage = new Home_Page();
 
     @Given("The user is on the DS Algo portal")
     public void the_user_is_on_the_ds_algo_portal() {
-        logger.info("DSAlgo Portal");
+        LoggerLoad.info("DSAlgo Portal");
         homePage.dsAlgoPortal();
     }
 
@@ -35,7 +33,7 @@ public class Home_Steps {
 
     @Given("The user is on the Home page")
     public void the_user_is_on_the_home_page() {
-        logger.info("User is on the Home Page");
+        LoggerLoad.info("User is on the Home Page");
         homePage.homepage();
     }
 
@@ -56,21 +54,21 @@ public class Home_Steps {
 
     @When("The user clicks on signin link")
     public void the_user_clicks_on_signin_link() {
-        logger.info("User Clicks on SignIn link");
+        LoggerLoad.info("User Clicks on SignIn link");
         homePage.clickSignIn();
     }
 
     @Then("The user is redirected to login page")
     public void the_user_is_redirected_to_login_page() {
-        logger.info("User redirected to Login page ");
+        LoggerLoad.info("User redirected to Login page ");
         String Title = homePage.loginPage();
-        logger.info("Title of current page is : " + Title);
+        LoggerLoad.info("Title of current page is : " + Title);
         assertEquals(Title, "Login");
     }
 
     @When("The user clicks on register link")
     public void the_user_clicks_on_register_link() {
-        logger.info("User Clicks on Register link");
+        LoggerLoad.info("User Clicks on Register link");
         homePage.clickRegister();
     }
 
