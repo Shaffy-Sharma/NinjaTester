@@ -1,24 +1,21 @@
+@DataStructurePage
+Feature: Data Structure page validation dsalgo
 
-Feature: Testing Arrays using different ways
+  Background: The user is logged in to DS Algo portal
+    Given The user is on Signin page of DS Algo portal
+    When The user enter valid "kodetesters" and "numpyninja24"
+    And The user click on login button
+    Then The user redirected to homepage
 
-
-  Scenario: Verify that user is able to navigate to "Data Structures - Introduction" page
-    Given The user is in the Home page after logged in
-    When The user clicks the "Getting Started" button in Data Structures - Introduction
-    Then The user should land in "Data Structures- Introduction Page" 
-    
-    
-  Scenario: Verify that user is able to navigate to "Time Complexity" page
-    Given The user is in the "Data Structures - Introduction" page
-    When The user clicks "Time Complexity" button
-    Then The user should be redirected to "Time Complexity" of Data structures-Introduction
-    
-      Scenario: Verify that user is able to navigate to "Practice Questions" page
-    Given The user is in the "Time Complexity" page
-    When The user clicks the "Practice Questions" button
-    Then The user should be redirected to "Practice Questions" of Data structures-Introduction
-    
-      Scenario: Verify that user is able to navigate to "try Editor" page
-    Given The user is in the "Time Complexity" page
-    When The user clicks "Try Here" button
-    Then The user should be redirected to a page having an try Editor with a Run button to test
+  Scenario: User is clicks on datastructure page
+    Given The user is on Home page after logged in
+    When user clicks on datastructure getstarted
+    Then user redirected to page with title "Data Structures-Introduction"
+    When user click on Time Complexity
+    Then It should navigate to corresponding page with title "Time Complexity"
+    When user click on Try here
+    Then It should navigate to corresponding page with title "Assessment"
+    When user enter the Python code
+      | print"DataStructure Introduction" |
+    And click on run button
+    Then The user redirected to homepage

@@ -8,41 +8,56 @@ public class DataStructure_Steps {
 	
 
 
-@When("The user clicks the {string} button in Data Structures - Introduction")
-public void the_user_clicks_the_button_in_data_structures_introduction(String string) {
+@When("user clicks on datastructure getstarted")
+public void user_clicks_on_datastructure_getstarted() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
 
-@Then("The user should land in {string}")
-public void the_user_should_land_in(String string) {
+@Then("user redirected to page with title {string}")
+public void user_redirected_to_page_with_title(String string) {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
 
-@Given("The user is in the {string} page")
-public void the_user_is_in_the_page(String string) {
+@When("user click on Time Complexity")
+public void user_click_on_time_complexity() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
 
-@Then("The user should be redirected to {string} of Data structures-Introduction")
-public void the_user_should_be_redirected_to_of_data_structures_introduction(String string) {
+@Then("It should navigate to corresponding page with title {string}")
+public void it_should_navigate_to_corresponding_page_with_title(String string) {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
 
-@When("The user clicks the {string} button")
-public void the_user_clicks_the_button(String string) {
+@When("user click on Try here")
+public void user_click_on_try_here() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
 
-@Then("The user should be redirected to a page having an try Editor with a Run button to test")
-public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
+@When("user enter the Python code")
+public void user_enter_the_python_code(io.cucumber.datatable.DataTable dataTable) {
+    // Write code here that turns the phrase above into concrete actions
+    // For automatic transformation, change DataTable to one of
+    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+    //
+    // For other transformations you can register a DataTableType.
+    throw new io.cucumber.java.PendingException();
+}
+
+@When("click on run button")
+public void click_on_run_button() {
     // Write code here that turns the phrase above into concrete actions
     throw new io.cucumber.java.PendingException();
 }
+
+
+
 
 
 }
