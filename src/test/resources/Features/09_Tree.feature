@@ -3,8 +3,8 @@ Feature: TreePage
 
   Background: Verify if user is logged in
     Given The user is on the DS Algo SignIn Page
-    When The user clicks login button after entering valid "username" and valid "password"
-    Then  The user should land on Home Page
+    When The user clicks login button after entering valid "Ninjatester" and valid "Welcome@123"
+    Then  The user redirected to homepage
 
   Scenario: Verify that user is able to navigate to "Tree" page
     Given The user is in the Home page after Sign in
