@@ -108,3 +108,165 @@
 [INFO ] 2025-06-09 10:50:01.998 [main] LoggerLoad - Launched browser from hooks !!
 [INFO ] 2025-06-09 10:50:01.998 [main] LoggerLoad - Signing in..
 [ERROR] 2025-06-09 10:50:02.000 [main] LoggerLoad - Steps Failed , Taking Screenshot
+[INFO ] 2025-06-09 19:07:34.615 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:07:46.469 [main] Home_Steps - DSAlgo Portal
+[INFO ] 2025-06-09 19:07:57.961 [main] Home_Page - Sign In visible: true, Register visible: true
+[INFO ] 2025-06-09 19:07:59.509 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:08:01.986 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-09 19:08:03.515 [main] Home_Page - Dropdown options visible: true
+[INFO ] 2025-06-09 19:08:04.363 [main] Home_Page - Error message displayed: true
+[INFO ] 2025-06-09 19:08:05.960 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:08:09.023 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-09 19:08:09.963 [main] Home_Page - Click '{}' link on Data StructuresGet Started
+[INFO ] 2025-06-09 19:08:11.519 [main] Home_Page - Error message displayed: true
+[INFO ] 2025-06-09 19:08:13.019 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:08:15.349 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-09 19:08:16.144 [main] Home_Steps - User Clicks on SignIn link
+[INFO ] 2025-06-09 19:08:17.154 [main] Home_Page - User landed on Login page!
+[INFO ] 2025-06-09 19:08:17.161 [main] Home_Steps - User redirected to Login page 
+[INFO ] 2025-06-09 19:08:17.193 [main] Home_Steps - Title of current page is : Login
+[INFO ] 2025-06-09 19:08:18.867 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:08:21.622 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-09 19:08:22.460 [main] Home_Steps - User Clicks on Register link
+[INFO ] 2025-06-09 19:08:23.480 [main] Home_Page - User landed on Register page!
+[INFO ] 2025-06-09 19:08:23.484 [main] LoggerLoad - User redirected to Registraion page 
+[INFO ] 2025-06-09 19:08:23.514 [main] LoggerLoad - Title of current page is : Registration
+[INFO ] 2025-06-09 19:08:25.016 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:08:27.978 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-09 19:08:29.435 [main] Home_Page - Dropdown options visible: true
+[INFO ] 2025-06-09 19:08:29.755 [main] Home_Page - Validating dropdown option 1: Expected='Arrays', Actual=''
+[ERROR] 2025-06-09 19:08:29.780 [main] LoggerLoad - Steps Failed , Taking Screenshot
+[INFO ] 2025-06-09 19:08:31.833 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:08:34.079 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-09 19:08:35.495 [main] Home_Page - User clicked on '{}'Arrays
+[INFO ] 2025-06-09 19:08:41.873 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:08:44.387 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-09 19:08:48.038 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:08:52.237 [main] LoggerLoad - User is on Register Page
+[INFO ] 2025-06-09 19:08:52.876 [main] LoggerLoad - Click Register Button
+[INFO ] 2025-06-09 19:08:53.148 [main] LoggerLoad - verify the warn message
+[WARN ] 2025-06-09 19:08:53.215 [main] LoggerLoad - Please fill out this field.
+[INFO ] 2025-06-09 19:08:54.766 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:08:58.187 [main] LoggerLoad - User is on Register Page
+[INFO ] 2025-06-09 19:08:58.882 [main] LoggerLoad - Enter User Name
+[INFO ] 2025-06-09 19:08:59.391 [main] LoggerLoad - Click Register Button
+[INFO ] 2025-06-09 19:08:59.635 [main] LoggerLoad - verify the warn message
+[WARN ] 2025-06-09 19:08:59.721 [main] LoggerLoad - Please fill out this field.
+[INFO ] 2025-06-09 19:09:01.179 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:03.680 [main] LoggerLoad - User is on Register Page
+[INFO ] 2025-06-09 19:09:04.386 [main] LoggerLoad - Enter User Name
+[INFO ] 2025-06-09 19:09:04.881 [main] LoggerLoad - Enter password
+[INFO ] 2025-06-09 19:09:05.417 [main] LoggerLoad - Click Register Button
+[INFO ] 2025-06-09 19:09:05.603 [main] LoggerLoad - verify the warn message
+[WARN ] 2025-06-09 19:09:05.691 [main] LoggerLoad - Please fill out this field.
+[INFO ] 2025-06-09 19:09:06.430 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:09.709 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-09 19:09:10.321 [main] LoggerLoad - ----User Clicks on Register Link-----
+[INFO ] 2025-06-09 19:09:11.454 [main] LoggerLoad - ----User redirected to Page----Registration
+[INFO ] 2025-06-09 19:09:12.164 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:15.557 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-09 19:09:16.193 [main] LoggerLoad - User is Clicking login button with empty fields
+[INFO ] 2025-06-09 19:09:18.058 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:21.244 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-09 19:09:21.859 [main] LoggerLoad - --User Enters Only the User name--
+[INFO ] 2025-06-09 19:09:22.183 [main] LoggerLoad - ----User can seePlease fill out this field.-----
+[INFO ] 2025-06-09 19:09:23.658 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:26.198 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-09 19:09:26.913 [main] LoggerLoad - User Enters Only Password
+[INFO ] 2025-06-09 19:09:27.374 [main] LoggerLoad - User can seePlease fill out this field.
+[INFO ] 2025-06-09 19:09:28.884 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:32.122 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-09 19:09:33.413 [main] LoggerLoad - -----User Clicks on Login button-----
+[ERROR] 2025-06-09 19:09:34.607 [main] LoggerLoad - Steps Failed , Taking Screenshot
+[INFO ] 2025-06-09 19:09:36.951 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:40.008 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-09 19:09:41.894 [main] LoggerLoad - User Enter username as " NinjaTester "and Password as " Welcome@123" 
+[INFO ] 2025-06-09 19:09:45.384 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:50.415 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:54.568 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:09:58.892 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:10:03.661 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:10:08.290 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:10:12.663 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:10:17.572 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-09 19:10:22.638 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:58:16.299 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:58:24.437 [main] Home_Steps - DSAlgo Portal
+[INFO ] 2025-06-11 14:58:26.943 [main] Home_Page - Sign In visible: true, Register visible: true
+[INFO ] 2025-06-11 14:58:27.807 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:58:33.734 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-11 14:58:35.447 [main] Home_Page - Dropdown options visible: true
+[INFO ] 2025-06-11 14:58:36.860 [main] Home_Page - Error message displayed: true
+[INFO ] 2025-06-11 14:58:39.681 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:58:43.229 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-11 14:58:44.199 [main] Home_Page - Click '{}' link on Data StructuresGet Started
+[INFO ] 2025-06-11 14:58:46.020 [main] Home_Page - Error message displayed: true
+[INFO ] 2025-06-11 14:58:47.995 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:58:51.932 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-11 14:58:52.261 [main] Home_Steps - User Clicks on SignIn link
+[INFO ] 2025-06-11 14:58:54.112 [main] Home_Page - User landed on Login page!
+[INFO ] 2025-06-11 14:58:54.121 [main] Home_Steps - User redirected to Login page 
+[INFO ] 2025-06-11 14:58:54.176 [main] Home_Steps - Title of current page is : Login
+[INFO ] 2025-06-11 14:58:54.738 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:59:00.021 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-11 14:59:00.890 [main] Home_Steps - User Clicks on Register link
+[INFO ] 2025-06-11 14:59:02.042 [main] Home_Page - User landed on Register page!
+[INFO ] 2025-06-11 14:59:02.090 [main] LoggerLoad - User redirected to Registraion page 
+[INFO ] 2025-06-11 14:59:02.188 [main] LoggerLoad - Title of current page is : Registration
+[INFO ] 2025-06-11 14:59:04.344 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:59:08.831 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-11 14:59:10.839 [main] Home_Page - Dropdown options visible: true
+[INFO ] 2025-06-11 14:59:11.471 [main] Home_Page - Validating dropdown option 1: Expected='Arrays', Actual=''
+[ERROR] 2025-06-11 14:59:11.504 [main] LoggerLoad - Steps Failed , Taking Screenshot
+[INFO ] 2025-06-11 14:59:14.179 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:59:18.891 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-11 14:59:20.724 [main] Home_Page - User clicked on '{}'Arrays
+[INFO ] 2025-06-11 14:59:22.795 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:59:29.430 [main] Home_Steps - User is on the Home Page
+[INFO ] 2025-06-11 14:59:42.686 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:59:48.780 [main] LoggerLoad - User is on Register Page
+[INFO ] 2025-06-11 14:59:50.410 [main] LoggerLoad - Click Register Button
+[INFO ] 2025-06-11 14:59:52.264 [main] LoggerLoad - verify the warn message
+[WARN ] 2025-06-11 14:59:53.002 [main] LoggerLoad - Please fill out this field.
+[INFO ] 2025-06-11 14:59:54.603 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 14:59:59.528 [main] LoggerLoad - User is on Register Page
+[INFO ] 2025-06-11 15:00:00.373 [main] LoggerLoad - Enter User Name
+[INFO ] 2025-06-11 15:00:02.465 [main] LoggerLoad - Click Register Button
+[INFO ] 2025-06-11 15:00:06.192 [main] LoggerLoad - verify the warn message
+[WARN ] 2025-06-11 15:00:07.407 [main] LoggerLoad - Please fill out this field.
+[INFO ] 2025-06-11 15:00:22.245 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:00:27.235 [main] LoggerLoad - User is on Register Page
+[INFO ] 2025-06-11 15:00:28.030 [main] LoggerLoad - Enter User Name
+[INFO ] 2025-06-11 15:00:32.467 [main] LoggerLoad - Enter password
+[INFO ] 2025-06-11 15:00:34.929 [main] LoggerLoad - Click Register Button
+[INFO ] 2025-06-11 15:00:35.502 [main] LoggerLoad - verify the warn message
+[WARN ] 2025-06-11 15:00:35.919 [main] LoggerLoad - Please fill out this field.
+[INFO ] 2025-06-11 15:00:37.568 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:00:42.337 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-11 15:00:42.854 [main] LoggerLoad - ----User Clicks on Register Link-----
+[INFO ] 2025-06-11 15:00:44.974 [main] LoggerLoad - ----User redirected to Page----Registration
+[INFO ] 2025-06-11 15:00:46.743 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:00:51.920 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-11 15:00:52.417 [main] LoggerLoad - User is Clicking login button with empty fields
+[INFO ] 2025-06-11 15:00:57.756 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:01:02.517 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-11 15:01:03.004 [main] LoggerLoad - --User Enters Only the User name--
+[INFO ] 2025-06-11 15:01:08.271 [main] LoggerLoad - ----User can seePlease fill out this field.-----
+[INFO ] 2025-06-11 15:01:10.034 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:01:14.170 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-11 15:01:14.641 [main] LoggerLoad - User Enters Only Password
+[INFO ] 2025-06-11 15:01:15.647 [main] LoggerLoad - User can seePlease fill out this field.
+[INFO ] 2025-06-11 15:01:18.803 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:01:24.706 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-11 15:01:28.816 [main] LoggerLoad - -----User Clicks on Login button-----
+[ERROR] 2025-06-11 15:01:30.704 [main] LoggerLoad - Steps Failed , Taking Screenshot
+[INFO ] 2025-06-11 15:01:32.327 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:01:36.318 [main] LoggerLoad - ------User is On Sign in page------
+[INFO ] 2025-06-11 15:01:42.856 [main] LoggerLoad - User Enter username as " NinjaTester "and Password as " Welcome@123" 
+[INFO ] 2025-06-11 15:01:46.313 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:01:55.049 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:02:06.997 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:02:14.552 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:02:20.246 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:02:28.298 [main] LoggerLoad - Get Browser Type from Properties
+[INFO ] 2025-06-11 15:02:33.216 [main] LoggerLoad - Get Browser Type from Properties
