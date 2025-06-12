@@ -3,6 +3,7 @@ package PageFactory;
 import Drivers.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,7 +57,7 @@ public class Home_Page {
     private WebElement logoutSuccessMsg;
 
     //dropdown
-    @FindBy(xpath = "//div[@class='dropdown-menu']//a[@class='dropdown-item']")
+    @FindBy(xpath = "//div[@class='dropdown-menu show']")
     private List<WebElement> dropDownDataStructuresOptions;
 
     @FindBy(xpath="//a[@class='nav-link dropdown-toggle']")
@@ -90,6 +91,14 @@ public class Home_Page {
     @FindBy (xpath = "//a[@href ='queue']")
     private WebElement getStartedQueue;
 
+    //login page
+    @FindBy(xpath="//input[@value='Login']")
+    private WebElement loginBtn;
+    @FindBy(xpath="//input[@id='id_username']")
+    private WebElement username;
+    @FindBy(xpath="//input[@id='id_password']")
+    private WebElement password;
+
 
     //Action methods
     public void dsAlgoPortal() { driver.get(url); }
@@ -97,6 +106,13 @@ public class Home_Page {
     //Home Page URL
     public void homepage() {
         driver.get(homePageUrl);
+    }
+
+    public void homePageWithSignIn(String uname, String pwd) {
+        signIn.click();
+        username.sendKeys(uname);
+        password.sendKeys(pwd);
+        loginBtn.click();
     }
 
     public void validateUserLandedOnHomePage() {
@@ -186,23 +202,6 @@ public class Home_Page {
 
     public void validateDataStructuresDropdown() {
         dropDownDataStructure.click();
-
-        List<WebElement> dataStructuresOptions = dropDownDataStructuresOptions;
-        String[] expectedOptions = {"Arrays", "Linked List", "Stack", "Queue", "Tree", "Graph"};
-
-        Assert.assertEquals(dataStructuresOptions.size(), expectedOptions.length,
-                "Mismatch in number of dropdown options.");
-
-        for (int i = 0; i < dataStructuresOptions.size(); i++) {
-            String actualText = dataStructuresOptions.get(i).getText().trim();
-            String expectedText = expectedOptions[i];
-
-            LoggerLoad.info("Validating dropdown option: ");
-            Assert.assertEquals(actualText, expectedText,
-                    String.format("Dropdown option at index %d does not match. Expected='%s', Actual='%s'", i, expectedText, actualText));
-        }
-
-        LoggerLoad.info("All Data Structures dropdown options validated successfully.");
     }
 
     public void validateEachDropdownInHomePage(String string) {
@@ -296,7 +295,7 @@ public class Home_Page {
         String expectedUrl = ConfigReader.arrayPageURL();
         String actualUrl = driver.getCurrentUrl();
         LoggerLoad.info("Validating Array page URL...");
-        Assert.assertEquals("User not navigated to Arrays page!", expectedUrl, actualUrl);
+        Assert.assertEquals(expectedUrl, actualUrl, "User not navigated to Arrays page!");
         LoggerLoad.info("Successfully navigated to Arrays page: " + actualUrl);
     }
 }

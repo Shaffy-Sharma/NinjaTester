@@ -10,8 +10,7 @@ import utilities.LoggerLoad;
 import static org.testng.Assert.assertTrue;
 import static org.testng.Assert.assertEquals;
 
-public class graphSteps
-{
+public class graphSteps {
 	Graph_Page graph=new Graph_Page();
 	 Home_Page home = new Home_Page();
 
@@ -107,11 +106,11 @@ public class graphSteps
         LoggerLoad.info("User clicked on Try Here link");
     }
 
-    @Given("User is on the try editor page")
-    public void user_is_on_the_try_editor_page() {
-        LoggerLoad.info("User is on Try Editor Page");
-        // Assume previous step (clickTryHereLink) has navigated to this page
-    }
+//    @Given("User is on the try editor page")
+//    public void user_is_on_the_try_editor_page() {
+//        LoggerLoad.info("User is on Try Editor Page");
+//        // Assume previous step (clickTryHereLink) has navigated to this page
+//    }
 
     @When("User enters the Python Code")
     public void user_enters_the_python_code(io.cucumber.datatable.DataTable dataTable) throws InterruptedException {
@@ -120,11 +119,11 @@ public class graphSteps
         LoggerLoad.info("User entered Python code: " + pythonCode);
     }
 
-    @When("User clicks on run button")
-    public void user_clicks_on_run_button() {
-    	graph.clickRunButton();
-
-    }
+//    @When("User clicks on run button")
+//    public void user_clicks_on_run_button() {
+//    	graph.clickRunButton();
+//
+//    }
 
     @Then("User is presented with Result")
     public void user_is_presented_with_result() {
