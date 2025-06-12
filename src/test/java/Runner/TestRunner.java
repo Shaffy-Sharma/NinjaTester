@@ -1,7 +1,7 @@
 package Runner;
 
+import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
-import io.cucumber.junit.CucumberOptions;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(
