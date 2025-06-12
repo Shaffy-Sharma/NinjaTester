@@ -1,19 +1,36 @@
 package stepDefinitions;
 
+import Drivers.DriverFactory;
 import PageFactory.Home_Page;
+import PageFactory.Tree_Page;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import utilities.ConfigReader;
+import utilities.ExcelReader;
 import utilities.LoggerLoad;
+import utilities.Utility_Methods;
+
+import java.io.IOException;
 
 import static org.testng.Assert.assertEquals;
 
 public class Home_Steps {
 
-    Home_Page homePage = new Home_Page();
+    WebDriver driver;
+    Home_Page homePage;
+    Utility_Methods util = new Utility_Methods();
+
+    public Home_Steps() {
+        driver = DriverFactory.getDriver();
+        homePage = new Home_Page();
+    }
 
     @Given("The user is on the DS Algo portal")
     public void the_user_is_on_the_ds_algo_portal() {
@@ -85,9 +102,19 @@ public class Home_Steps {
         Assert.assertTrue(homePage.isDropdownVisible());
     }
 
-    @Then("The user should able to see {int} options Arrays, Linked,List, Stack, Queue, Tree, Graph in dropdown menu")
+    @Then("The user should able to see {int} options Arrays, LinkedList, Stack, Queue, Tree, Graph in dropdown menu")
     public void the_user_should_able_to_see_options_arrays_linked_list_stack_queue_tree_graph_in_dropdown_menu(Integer int1) {
         homePage.validateDataStructuresDropdown(); // Already asserts the count and content
+    }
+
+    @Given("User is in the Home page after logging in using credentials from Excel {int}")
+    public void user_is_in_the_home_page_after_logging_in_using_credentials_from_excel(Integer int1) throws IOException {
+        LoggerLoad.info("User Signing In");
+        ExcelReader read = new ExcelReader();
+        String username = read.getusername(int1);
+        String password = read.getpassword(int1);
+        homePage.homePageWithSignIn(username, password);
+        LoggerLoad.info("User Signed In");
     }
 
     @When("The user clicks datastructures dropdown and select {string}")

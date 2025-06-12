@@ -13,28 +13,21 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 
-public class ExcelReader 
-{
+public class ExcelReader {
 	String [] [] credentials = new String [100] [100];
 	ArrayList<String> practice = new ArrayList<String>();
 	int i = 0,j=0;
-	
 	public static int totalRow;
 
     public List<Map<String, String>> getData(String excelFilePath, String sheetName)throws InvalidFormatException, IOException {
-
-
  	   // try-with-resources to ensure workbook is closed automatically
-     try (Workbook workbook = WorkbookFactory.create(new File(excelFilePath)))
-     {
+     try (Workbook workbook = WorkbookFactory.create(new File(excelFilePath))) {
          Sheet sheet = workbook.getSheet(sheetName);
          return readSheet(sheet);
      }
-        
     }
 
     private List<Map<String, String>> readSheet(Sheet sheet) {
-
         Row row;
         Cell cell;
 
@@ -65,23 +58,29 @@ public class ExcelReader
 
         return excelRows;
     }
-    public int countRow() {
+
+	public int countRow() {
         return totalRow;
     }
 
     public String readExcelSheet(int rowvalue, int colvalue, String sheetname) throws IOException {
     	
-		String path = System.getProperty("user.dir")+"/src/test/resources/testdata/testdata.xlsx";
+		String path = System.getProperty("user.dir")+"/src/test/resources/testdata/dsAlgoData.xlsx";
 		File Excelfile = new File(path);
 		
 		FileInputStream Fis = new FileInputStream(Excelfile);
 		XSSFWorkbook workbook = new XSSFWorkbook(Fis);
 		XSSFSheet sheet = workbook.getSheet(sheetname);
+		if (sheet == null) {
+			System.out.println("Available sheets:");
+			for (int i = 0; i < workbook.getNumberOfSheets(); i++) {
+				System.out.println("- " + workbook.getSheetName(i));
+			}
+			throw new IllegalArgumentException("Sheet named '" + sheetname + "' not found in Excel file.");
+		}
 		
 		Iterator<Row> row = sheet.rowIterator();
-		
 		while(row.hasNext()) {
-			
 			Row currRow = row.next();
 			Iterator<Cell> cell = currRow.cellIterator();
 			
@@ -99,25 +98,25 @@ public class ExcelReader
 
     public String getusername(int rownumber) throws IOException {
     	String username = null;	
-    	String sheetname = "Sheet1";
+    	String sheetname = "SignIn";
     	username = readExcelSheet(rownumber, 0, sheetname);
-    	LoggerLoad.info("Username is:"+username);
+    	LoggerLoad.info("Username is:" + username);
     	return username;	
     }
 
     public String getpassword(int rownumber) throws IOException {
     	String password = null;	
-    	String sheetname = "Sheet1";
+    	String sheetname = "SignIn";
     	password = readExcelSheet(rownumber, 1, sheetname);
-    	LoggerLoad.info("Password is:"+password);
+    	LoggerLoad.info("Password is:" + password);
     	return password;	
     }
 
     public String gettryherecode(int rownumber) throws IOException {
     	String tryherecode = null;	
-    	String sheetname = "tryeditor";
+    	String sheetname = "PythonCode";
     	tryherecode = readExcelSheet(rownumber, 0, sheetname);
-    	LoggerLoad.info("Try here code is:"+tryherecode);
+    	LoggerLoad.info("Try here code is: " + tryherecode);
     	return tryherecode;
     }
 }

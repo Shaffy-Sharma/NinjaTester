@@ -22,13 +22,21 @@ Feature: Homepage
 
     Scenario: Verify that user is able to view options of Data Structures dropdown on home page without Sign in
       When The user clicks the Data Structures dropdown
-      Then The user should able to see 6 options Arrays, Linked,List, Stack, Queue, Tree, Graph in dropdown menu
+      Then The user should able to see 6 options Arrays, LinkedList, Stack, Queue, Tree, Graph in dropdown menu
 
-    Scenario: Verify if user able to select Arrays option in data structure dropdown in homepage with signIn
+    Scenario Outline: Verify if user able to select Arrays option in data structure dropdown in homepage with signIn
+      Given User is in the Home page after logging in using credentials from Excel <Rownumber>
       When The user clicks datastructures dropdown and select "Arrays"
       Then The user should redirected to Array page
+      Examples:
+        | Rownumber |
+        |    1      |
 
-    Scenario: Verify if user able to click Get started button from Arrays in homepage with signIn
+  Scenario Outline: Verify if user able to click Get started button from Arrays in homepage with signIn
+      Given User is in the Home page after logging in using credentials from Excel <Rownumber>
       When  The user clicks on Arrays "Get Started" button on homepage
       Then The user should redirected to Array page
+    Examples:
+      | Rownumber |
+      |    1      |
 

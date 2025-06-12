@@ -1,4 +1,4 @@
-@regression
+@ninjaTester_homePage
 Feature: Homepage
 
   Background: The user is on the dsAlgo portal

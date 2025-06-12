@@ -48,7 +48,6 @@ public class Tree_Steps {
 
     @Then("The user should land on Home Page")
     public void the_user_should_land_on_home_page() {
-        homePage.homepage();
         LoggerLoad.info("User landed on Home Page");
     }
 
@@ -110,20 +109,14 @@ public class Tree_Steps {
     }
 
     @When("The user writes valid python code in tryEditor page")
-    public void the_user_writes_valid_python_code_in_try_editor_page() throws IOException, InvalidFormatException {
-        String sheetName = "Tree";  // adjust if different
-        int rowNum = 0;
-
-        Utility_Methods util = new Utility_Methods();
-        Tree_Page treePage = new Tree_Page();
-
+    public void the_user_writes_valid_python_code_in_try_editor_page(String sheetName, Integer rowNumber) throws IOException, InvalidFormatException {
         // Fetch code from Excel
-        String pythonCode = util.getCodefromExcel(sheetName, rowNum);
+        String pythonCode = util.getCodeFromExcel(sheetName, rowNumber);
 
-        // Use Utility_Methods to send the code to the Try Editor
+        // Send the code to the Try Editor using Utility_Methods
         WebElement editor = treePage.getTextEditor();
         util.enterPythonCodeForPractice(pythonCode, editor);
-        LoggerLoad.info("Valid Python code from Excel entered into the editor.");
+        LoggerLoad.info("Valid Python code from Excel entered into the editor: Sheet = " + sheetName + ", Row = " + rowNumber);
     }
 
     @Then("User is able to see the output in console of Tree Page")
@@ -194,7 +187,7 @@ public class Tree_Steps {
         String sheetName = "Tree";
         int rowNum = 1;
 
-        String invalidCode = util.getCodefromExcel(sheetName, rowNum);
+        String invalidCode = util.getCodeFromExcel(sheetName, rowNum);
         util.enterPythonCodeForPractice(invalidCode, treePage.getTextEditor());
         LoggerLoad.info("Invalid Python code from Excel entered into the editor.");
     }
@@ -223,20 +216,14 @@ public class Tree_Steps {
     }
 
     @When("The User writes valid python code in Tree Page")
-    public void the_user_writes_valid_python_code_in_tree_page() throws IOException, InvalidFormatException {
-        String sheetName = "Tree";  // adjust if different
-        int rowNum = 0;
-
-        Utility_Methods util = new Utility_Methods();
-        Tree_Page treePage = new Tree_Page();
-
+    public void the_user_writes_valid_python_code_in_tree_page(String sheetName, Integer rowNumber) throws IOException, InvalidFormatException {
         // Fetch code from Excel
-        String pythonCode = util.getCodefromExcel(sheetName, rowNum);
+        String pythonCode = util.getCodeFromExcel(sheetName, rowNumber);
 
-        // Use Utility_Methods to send the code to the Try Editor
+        // Send the code to the Try Editor using Utility_Methods
         WebElement editor = treePage.getTextEditor();
         util.enterPythonCodeForPractice(pythonCode, editor);
-        LoggerLoad.info("Valid Python code from Excel entered into the editor.");
+        LoggerLoad.info("Valid Python code from Excel entered into the editor: Sheet = " + sheetName + ", Row = " + rowNumber);
     }
 
     @When("The user clicks Tree Traversals link")
