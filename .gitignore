@@ -1,7 +1,8 @@
 logs/
+# Ignore test output and reports
+ExtentReports/
 Reports/
 allure-results/
-ExtentReports/
 test-output/
 target/ 
 *.log
