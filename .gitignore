@@ -1,4 +1,9 @@
-
+logs/
+# Ignore test output and reports
+ExtentReports/
+Reports/
+allure-results/
+test-output/
 target/ 
 *.log
 !.mvn/wrapper/maven-wrapper.jar
