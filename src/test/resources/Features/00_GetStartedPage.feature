@@ -1,4 +1,4 @@
-@ninjaTester_homePage
+@homePage
 Feature: Homepage
 
   Background: The user is on the dsAlgo portal

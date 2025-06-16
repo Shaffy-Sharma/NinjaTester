@@ -37,8 +37,7 @@ build/
 .vscode/
 
 ### Mac OS ###
-<<<<<<< HEAD
 .DS_Store
-=======
-.DS_Storetarget/
->>>>>>> main
+allure-results/
+ExtentReports/
+.idea
