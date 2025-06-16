@@ -1,9 +1,9 @@
-
+@treePage
 Feature: TreePage
 
-  Background: Verify if user is logged in
-    Given The user is on the DS Algo SignIn Page
-    When The user clicks login button after entering valid "Ninjatester" and valid "Welcome@123"
+  Background: The user is logged in to DS Algo portal
+    Given The user is on Signin page of DS Algo portal
+    When The user enter valid "Ninjatester" and "Welcome@123" and click on login button
     Then  The user redirected to homepage
 
   Scenario: Verify that user is able to navigate to "Tree" page
@@ -21,7 +21,6 @@ Feature: TreePage
     When  The user clicks Try Here button in Tree page
     Then  The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When  The user writes valid python code in tryEditor page
@@ -31,7 +30,6 @@ Feature: TreePage
     Given The user is on the tryEditor page
     When  The user writes invalid python code in tryEditor page
     Then  User is able to see the error message in Tree Page pop up window
-
 
   Scenario: Verify if user able to navigate to "Terminologies" page
     Given The  user is on the Tree page after logged in
@@ -43,7 +41,6 @@ Feature: TreePage
     When  The user clicks Try Here button in Tree Page
     Then  The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the tryEditor page
     When  The user writes valid python code in Tree Page
@@ -53,7 +50,6 @@ Feature: TreePage
     Given The user is on the Tree tryEditor page
     When  The user writes invalid python code in Tree Page
     Then  User is able to see the error msg in  Tree Page pop up window
-
 
   Scenario: Verify if user able to direct to "Types of Trees"
     Given The  user is on the Tree page after logged in
@@ -65,7 +61,6 @@ Feature: TreePage
     When  The user clicks Try Here button in Tree Page
     Then  The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When  The User writes valid python code in Tree Page
@@ -75,20 +70,17 @@ Feature: TreePage
     Given The user is on the Tree tryEditor page
     When  The user writes invalid python code in Tree Page
     Then  User is able to see the error msg in  Tree Page pop up window
-
 
   Scenario: Verify if user able to direct to "Tree Traversals"
     Given The  user is on the Tree page after logged in
     When  The user clicks Tree Traversals link
     Then  The user should be redirected to the Tree Traversals Page
 
-
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Tree Traversals Page
     When  The user clicks Try Here button in Tree Page
     Then  The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When  The User writes valid python code in Tree Page
@@ -99,19 +91,16 @@ Feature: TreePage
     When  The user writes invalid python code in Tree Page
     Then  User is able to see the error msg in  Tree Page pop up window
 
-
   Scenario: Verify if user able to direct to "Traversals-Illustration"
     Given The  user is on the Tree page after logged in
     When  The user clicks Traversals-Illustration link
     Then  The user should be redirected to the Traversals-Illustration Page
-
 
   Scenario: Verify if user able to to redirect to a page having an tryEditor with a Run button to test
     Given The user is in the Traversals-Illustration Page
     When  The user clicks Try Here button in Tree Page
     Then  The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When  The User writes valid python code in Tree Page
@@ -132,7 +121,6 @@ Feature: TreePage
     When  The user clicks Try Here button in Tree Page
     Then  The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When  The User writes valid python code in Tree Page
@@ -153,7 +141,6 @@ Feature: TreePage
     When The user clicks Try Here button in Tree Page
     Then The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When The User writes valid python code in Tree Page
@@ -174,7 +161,6 @@ Feature: TreePage
     When The user clicks Try Here button in Tree Page
     Then The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When The User writes valid python code in Tree Page
@@ -184,7 +170,6 @@ Feature: TreePage
     Given The user is on the Tree tryEditor page
     When The user writes invalid python code in Tree Page
     Then User is able to see the error msg in  Tree Page pop up window
-
 
   Scenario: Verify if user able to direct to "Binary Tree Traversals"
     Given The  user is on the Tree page after logged in
@@ -196,7 +181,7 @@ Feature: TreePage
     When The user clicks Try Here button in Tree Page
     Then The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
+
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When The User writes valid python code in Tree Page
@@ -206,7 +191,6 @@ Feature: TreePage
     Given The user is on the Tree tryEditor page
     When The user writes invalid python code in Tree Page
     Then User is able to see the error msg in  Tree Page pop up window
-
 
   Scenario: Verify if user able to direct to "Implementation of Binary Trees"
     Given The  user is on the Tree page after logged in
@@ -218,7 +202,6 @@ Feature: TreePage
     When The user clicks Try Here button in Tree Page
     Then The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When The User writes valid python code in Tree Page
@@ -239,7 +222,6 @@ Feature: TreePage
     When The user clicks Try Here button in Tree Page
     Then The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When The User writes valid python code in Tree Page
@@ -260,7 +242,6 @@ Feature: TreePage
     When The user clicks Try Here button in Tree Page
     Then The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When The User writes valid python code in Tree Page
@@ -281,7 +262,6 @@ Feature: TreePage
     When The user clicks Try Here button in Tree Page
     Then The user should be redirected to a Tree page having an tryEditor with a Run button to test
 
-  @sanity
   Scenario: Verify if user able to see the output in console
     Given The user is on the Tree tryEditor page
     When The User writes valid python code in Tree Page
