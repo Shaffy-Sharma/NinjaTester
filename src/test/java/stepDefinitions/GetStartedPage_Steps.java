@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import utilities.LoggerLoad;
 
 public class GetStartedPage_Steps {
@@ -32,6 +33,9 @@ public class GetStartedPage_Steps {
 
     @Then("The user should land on DSAlgo Homepage.")
     public void the_user_should_land_on_ds_algo_homepage() {
-        LoggerLoad.info("User lands on DSAlgo home page");
+        String expectedTitle = "NumpyNinja";
+        String actualTitle = driver.getTitle();
+        LoggerLoad.info("User is on the Home Page. Title: " + actualTitle);
+        Assert.assertEquals(actualTitle, expectedTitle, "User is not on the Home Page.");
     }
 }

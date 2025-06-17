@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utilities.ConfigReader;
@@ -21,8 +22,6 @@ public class Home_Page {
 
     private  WebDriver driver;
     private WebDriverWait wait;
-    private String url = ConfigReader.applicationUrl();
-    private String homePageUrl = ConfigReader.homePage();
 
     // initializing page objects
     public Home_Page(){
@@ -31,17 +30,14 @@ public class Home_Page {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    //Locators
-    @FindBy(xpath ="//button[text()='Get Started']")
-    private WebElement getStartedButton;
 
     //Registration, SignIn, SignOut
     @FindBy (xpath="//a[@href ='/register']")
-    private WebElement register;
-    @FindBy (xpath="//a[@href ='/login']")
-    private WebElement signIn;
+    private WebElement registerLink;
+    @FindBy (xpath="//a[normalize-space()='Sign in']")
+    private WebElement signInLink;
     @FindBy(xpath ="//ul/a[3]" )
-    private WebElement signOut;
+    private WebElement signOutLink;
 
     @FindBy(linkText ="NumpyNinja")
     WebElement NumpyNinjaLink;
@@ -100,16 +96,9 @@ public class Home_Page {
     private WebElement password;
 
 
-    //Action methods
-    public void dsAlgoPortal() { driver.get(url); }
-
     //Home Page URL
-    public void homepage() {
-        driver.get(homePageUrl);
-    }
-
     public void homePageWithSignIn(String uname, String pwd) {
-        signIn.click();
+        signInLink.click();
         username.sendKeys(uname);
         password.sendKeys(pwd);
         loginBtn.click();
@@ -117,7 +106,6 @@ public class Home_Page {
 
     public void validateUserLandedOnHomePage() {
         driver.getPageSource().contains("NumpyNinja");
-        LoggerLoad.info("User landed on Home page!");
     }
 
     public boolean getTitleOfPage(String expectedTitle) {
@@ -135,22 +123,22 @@ public class Home_Page {
 
     //Register & SignIn
     public boolean isSignInAndRegisterVisible() {
-        boolean signInVisible = signIn.isDisplayed();
-        boolean registerVisible = register.isDisplayed();
+        boolean signInVisible = signInLink.isDisplayed();
+        boolean registerVisible = registerLink.isDisplayed();
         LoggerLoad.info("Sign In visible: {}, Register visible: ");
         return signInVisible && registerVisible;
     }
 
     public void clickRegister() {
-        register.click();
+        registerLink.click();
         Assert.assertEquals(driver.getTitle(),"Registration");
         LoggerLoad.info("User landed on Register page!");
     }
 
     public void clickSignIn(){
-        signIn.click();
-//        new WebDriverWait(driver, Duration.ofSeconds(5))
-//                .until(ExpectedConditions.elementToBeClickable(signIn)).click();
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(signInLink)).click();
+
         Assert.assertEquals(driver.getTitle(),"Login");
         LoggerLoad.info("User landed on Login page!");
     }
@@ -187,12 +175,6 @@ public class Home_Page {
 
 
     //Drop down
-    public boolean isGetStartedButtonDisplayed() {
-        boolean displayed = getStartedButton.isDisplayed();
-        LoggerLoad.info("'Get Started' button displayed: ");
-        return displayed;
-    }
-
     public boolean isDropdownVisible() {
         dropDownDataStructure.click();
         boolean visible = dropDownArray.isDisplayed();
@@ -204,98 +186,60 @@ public class Home_Page {
         dropDownDataStructure.click();
     }
 
-    public void validateEachDropdownInHomePage(String string) {
+    public void validateDropdownInHomePage(String option) {
         dropDownDataStructure.click();
 
-        switch (string) {
-            case "Arrays":
-                LoggerLoad.info("User clicked on '{}'" + string);
+        switch(option.toLowerCase()) {
+            case "arrays":
                 dropDownArray.click();
+                Assert.assertEquals(driver.getTitle(), "Array", "User is not on the Array page.");
                 break;
-            case "Linked List":
-                LoggerLoad.info("User clicked on '{}'" + string);
+            case "linkedlist":
                 dropDownLinkedList.click();
+                Assert.assertEquals(driver.getTitle(), "Linked List", "User is not on the Linked List page.");
                 break;
-            case "Stack":
-                LoggerLoad.info("User clicked on '{}'" + string);
+            case "stack":
                 dropDownStack.click();
-                break;
-            case "Queue":
-                LoggerLoad.info("User clicked on '{}'" + string);
-                dropDownQueue.click();
-                break;
-            case "Tree":
-                LoggerLoad.info("User clicked on '{}'" + string);
-                dropDownTree.click();
-                break;
-            case "Graph":
-                LoggerLoad.info("User clicked on '{}'" + string);
-                dropDownGraph.click();
+                Assert.assertEquals(driver.getTitle(), "Stack", "User is not on the Stack page.");
                 break;
             default:
-                LoggerLoad.warn("Invalid dropdown option: '{}'" + string);
-                break;
+                throw new IllegalArgumentException("Invalid option: " + option);
         }
     }
 
-
-    //Get started buttons
-    public void clickGetStartedBtn() {
-        getStartedButton.click();
+    public void selectDataStructure(){
+        LoggerLoad.info("Click '{}' link on Data Structures" + getStartedDataStrIntro.getText());
+        getStartedDataStrIntro.click();
     }
 
-    public void  clickGetStartedOnHomePage(String string) {
-
-        switch (string) {
-            case "Data Structures-Introduction":
-                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedDataStrIntro.getText());
-                getStartedDataStrIntro.click();
-                break;
-            case "Arrays":
-                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedArray.getText());
-                getStartedArray.click();
-                break;
-            case "Linked List":
-                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedLinkedList.getText());
-                getStartedLinkedList.click();
-                break;
-            case "Stack":
-                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedStack.getText());
-                getStartedStack.click();
-                break;
-            case "Queue":
-                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedQueue.getText());
-                getStartedQueue.click();
-                break;
-            case "Tree":
-                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedTree.getText());
-                getStartedTree.click();
-                break;
-            case "Graph":
-                LoggerLoad.info("Click '{}' link on Data Structures" + getStartedGraph.getText());
-                getStartedGraph.click();
-                break;
-        }
+    public void selectArray(){
+        LoggerLoad.info("Click '{}' link on Data Structures" + getStartedArray.getText());
+        getStartedArray.click();
     }
 
-    public void validateNavigationThroughDropdown(){
-        // Click on the dropdown
-        wait.until(ExpectedConditions.elementToBeClickable(dropDownDataStructure)).click();
-        LoggerLoad.info("Clicked on 'Data Structures' dropdown");
-
-        // Find and click on the 'Arrays' option
-        for (WebElement option : dropDownDataStructuresOptions) {
-            if (option.getText().trim().equalsIgnoreCase("Arrays")) {
-                wait.until(ExpectedConditions.elementToBeClickable(option)).click();
-                LoggerLoad.info("Clicked on 'Arrays' from dropdown");
-                break;
-            }
-        }
-        // Validate navigation to Array page
-        String expectedUrl = ConfigReader.arrayPageURL();
-        String actualUrl = driver.getCurrentUrl();
-        LoggerLoad.info("Validating Array page URL...");
-        Assert.assertEquals(expectedUrl, actualUrl, "User not navigated to Arrays page!");
-        LoggerLoad.info("Successfully navigated to Arrays page: " + actualUrl);
+    public void selectLinkedList() {
+        LoggerLoad.info("Click '{}' link on Data Structures" + getStartedLinkedList.getText());
+        getStartedLinkedList.click();
     }
+
+    public void selectStack() {
+        LoggerLoad.info("Click '{}' link on Data Structures" + getStartedStack.getText());
+        getStartedStack.click();
+    }
+
+    public void selectTree() {
+        LoggerLoad.info("Click '{}' link on Data Structures" + getStartedTree.getText());
+        getStartedTree.click();
+    }
+
+    public void selectQueue() {
+        LoggerLoad.info("Click '{}' link on Data Structures" + getStartedQueue.getText());
+        getStartedQueue.click();
+    }
+
+    public void selectGraph(){
+        LoggerLoad.info("Click '{}' link on Data Structures" + getStartedGraph.getText());
+        getStartedGraph.click();
+    }
+
 }
