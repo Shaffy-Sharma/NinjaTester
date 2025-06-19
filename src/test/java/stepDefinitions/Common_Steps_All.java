@@ -18,10 +18,9 @@ public class Common_Steps_All {
     GetStarted_Page getStartedPage = new GetStarted_Page();
     Home_Page homePage = new Home_Page();
     Array_Page arrayPage = new Array_Page();
-    Queue_Page qpage = new Queue_Page();
+    Queue_Page queuePage = new Queue_Page();
     Tree_Page treePage = new Tree_Page();
-
-    //Graph_Page graph = new Graph_Page();
+    Graph_Page graph = new Graph_Page();
 
 
     public Common_Steps_All() {
@@ -45,25 +44,10 @@ public class Common_Steps_All {
 
     @Then("The user redirected to homepage")
     public void the_user_redirected_to_homepage() {
-        String expectedTitle = "NumpyNinja"; // Or actual title of Home page
+        String expectedTitle = "NumpyNinja";
         String actualTitle = driver.getTitle();
         LoggerLoad.info("User is on the Home Page. Title: " + actualTitle);
         Assert.assertEquals(actualTitle, expectedTitle, "User is not on the Home Page.");
     }
-
-//    @Given("The user is on Home page after logged in")
-//    public void the_user_is_on_home_page_after_logged_in() {
-//        String Title = home.getTitleofPage();
-//        LoggerLoad.info("Title of current page is " + Title);
-//
-//    }
-
-//    @Then("User redirected to {string} page")
-//    public void user_redirected_to_page(String string) {
-//        LoggerLoad.info("The User redirected to " + string + "Page");
-//        String title = qpage.getPageTitle();
-//        LoggerLoad.info("Title of the Current Page is " + title);
-//        assertEquals(title, string);
-//    }
 
 }
