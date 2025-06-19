@@ -31,7 +31,7 @@ public class SignIn_Page {
 	WebElement password;
 	@FindBy(xpath = "//input[@value='Login']")
 	WebElement loginbtn;
-	@FindBy(xpath = "//div[contains(text(),'Invalid Username and Password')]")
+	@FindBy(xpath = "//div[@role='alert']")
 	WebElement alertMsg;
 	@FindBy(xpath="/html[1]/body[1]/div[2]/div[1]/div[2]/a[1]")
 	WebElement registerlink;

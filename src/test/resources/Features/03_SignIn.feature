@@ -31,7 +31,7 @@ Feature: SignIn Action
 
     Examples:
       | username    | password    |
-      | NinjaTester | Welcome@123 |
+      | ninjatester | Welcome@123 |
 
   Scenario Outline: User  Login with  valid "<username>" and "<password>"
     Given User is on SignIn page
