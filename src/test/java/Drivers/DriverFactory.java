@@ -10,17 +10,15 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import utilities.ConfigReader;
 
-public class DriverFactory 
-{
+public class DriverFactory {
 
-    // Thread-safe WebDriver instance
+    //each thread gets its own WebDriver instance, making the framework thread-safe
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     public static  ConfigReader configReader = new ConfigReader();
 
 
     // Initialize WebDriver
-   public  WebDriver initializeWebDriver(String browser)
-   {
+   public  WebDriver initializeWebDriver(String browser) {
         if (driver.get() == null) { // Ensure WebDriver is only initialized once per thread
             if (browser.equalsIgnoreCase("chrome")) {
 
@@ -50,24 +48,22 @@ public class DriverFactory
         return driver.get();
     }
 
-    // Get the WebDriver instance
-    public static WebDriver getDriver()
-    {
+    //Returns the WebDriver instance from the ThreadLocal.
+    public static WebDriver getDriver() {
         if (driver.get() == null) {
             throw new RuntimeException("WebDriver is not initialized. Please call initializeWebDriver() first.");
         }
         return driver.get();
     }
+
     public static ConfigReader configReader()
     {
         return configReader();
     }
 
     // Close the WebDriver
-    public  void closeDriver() 
-    {
-        if (driver.get() != null) 
-        {
+    public  void closeDriver() {
+        if (driver.get() != null) {
             driver.get().quit();
             driver.remove(); // Removes driver from ThreadLocal to clean up resources
         }

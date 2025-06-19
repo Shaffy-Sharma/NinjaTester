@@ -6,9 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utilities.ConfigReader;
 import utilities.LoggerLoad;
-import utilities.Utility_Methods;
+
 
 import java.time.Duration;
 
@@ -17,9 +16,6 @@ public class Tree_Page {
 
     public WebDriver driver;
     private WebDriverWait wait;
-    Utility_Methods util = new Utility_Methods();
-
-    private String homepageUrl = ConfigReader.homePage();
 
     // initializing page objects
     public Tree_Page() {
@@ -29,35 +25,33 @@ public class Tree_Page {
     }
 
     //Locators
-//  @FindBy(xpath= "//a[@href='tree']")
-//  private WebElement treeGetStartedBtn;
     @FindBy(xpath= "//a[text()='Tree']")
     private WebElement treeTitle;
-    @FindBy(xpath="//a[text()='Overview of Trees']")
+    @FindBy(xpath="//a[@href='overview-of-trees']")
     private WebElement overviewOfTrees;
-    @FindBy(xpath="//a[text()='Terminologies']")
+    @FindBy(xpath="//a[@href='terminologies']")
     private WebElement terminologies;
-    @FindBy(xpath="//a[text()='Types of Trees']")
+    @FindBy(xpath="//a[@href='types-of-trees']")
     private WebElement typesOfTrees;
-    @FindBy(xpath="//a[text()='Tree Traversals']")
+    @FindBy(xpath="//a[@href='tree-traversals']")
     private WebElement treeTraversals;
-    @FindBy(xpath="//a[text()='Traversals-Illustration']")
+    @FindBy(xpath="//a[@href='traversals-illustration']")
     private WebElement traversalsIllustration;
-    @FindBy(xpath="//a[text()='Binary Trees']")
+    @FindBy(xpath="//a[@href='binary-trees']")
     private WebElement binaryTrees;
-    @FindBy(xpath="//a[text()='Types of Binary Trees']")
+    @FindBy(xpath="//a[@href='types-of-binary-trees']")
     private WebElement typesOfBinaryTrees;
-    @FindBy(xpath="//a[text()='Implementation in Python']")
+    @FindBy(xpath="//a[@href='implementation-in-python']")
     private WebElement implementationInPython;
-    @FindBy(xpath="//a[text()='Binary Tree Traversals']")
+    @FindBy(xpath="//a[@href='binary-tree-traversals']")
     private WebElement binaryTreeTraversals;
-    @FindBy(xpath="//a[text()='Implementation of Binary Trees']")
+    @FindBy(xpath="//a[@href='implementation-of-binary-trees']")
     private WebElement implementationOfBinaryTrees;
-    @FindBy(xpath="//a[text()='Applications of Binary trees']")
+    @FindBy(xpath="//a[@href='applications-of-binary-trees']")
     private WebElement applicationsOfBinaryTrees;
-    @FindBy(xpath="//a[text()='Binary Search Trees']")
+    @FindBy(xpath="//a[@href='binary-search-trees']")
     private WebElement binarySearchTrees;
-    @FindBy(xpath="//a[text()='Implementation Of BST']")
+    @FindBy(xpath="//a[@href='implementation-of-bst']")
     private WebElement implementationOfBST;
     @FindBy(xpath="//a[@class='btn btn-info']")
     private WebElement tryHere;
@@ -72,31 +66,8 @@ public class Tree_Page {
     @FindBy(xpath="//a[text()='Sign out']")
     private WebElement SignOut;
 
-    //login page
-    @FindBy(xpath="//input[@value='Login']")
-    private WebElement loginBtn;
-    @FindBy(xpath="//input[@id='id_username']")
-    private WebElement usernameInput;
-    @FindBy(xpath="//input[@id='id_password']")
-    private WebElement passwordInput;
-
 
     //Action methods
-//    public void clickTreeGetStarted() {
-//        logger.info("User Click the tree Get Started Button");
-//        treeGetStartedBtn.click();
-//    }
-
-    public void login(String username, String password){
-        usernameInput.clear();
-        usernameInput.sendKeys(username);
-
-        passwordInput.clear();
-        passwordInput.sendKeys(password);
-
-        loginBtn.click();
-    }
-
     public boolean isOnExpectedURL(String expectedUrl) {
         String actualUrl = driver.getCurrentUrl();
         LoggerLoad.info("Validating page Url");
@@ -114,73 +85,87 @@ public class Tree_Page {
     }
 
     public void verifyOverviewOfTreeLink() {
-        LoggerLoad.info("User Clicks on Overview of Tree link");
-        overviewOfTrees.click();
+        LoggerLoad.info("User clicks on Overview of Trees link");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", overviewOfTrees);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", overviewOfTrees);
     }
 
     public void verifyTerminologyLink() {
         LoggerLoad.info("User Clicks on Terminologies link");
-        terminologies.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", terminologies);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", terminologies);
     }
 
     public void verifyTypesOfTreeLink() {
         LoggerLoad.info("User Clicks on Types of tree link");
-        typesOfTrees.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", typesOfTrees);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", typesOfTrees);
     }
 
     public void verifyTreeTraversalLink() {
         LoggerLoad.info("User Clicks on  tree traversal link");
-        treeTraversals.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", treeTraversals);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", treeTraversals);
     }
 
     public void verifyTravelIllustrateLink() {
         LoggerLoad.info("User Clicks on  traversal Illustration  link");
-        traversalsIllustration.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", traversalsIllustration);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", traversalsIllustration);
     }
 
     public void verifyBinaryTreeLink() {
         LoggerLoad.info("User Clicks on  Binary Tree link");
-        binaryTrees.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", binaryTrees);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", binaryTrees);
     }
 
     public void verifyTypesOfBinaryLink() {
         LoggerLoad.info("User Clicks on types of Binary tree link");
-        typesOfBinaryTrees.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", typesOfBinaryTrees);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", typesOfBinaryTrees);
     }
 
     public void verifyImplementPythonLink() {
         LoggerLoad.info("User Clicks on Implementation of Python link");
-        implementationInPython.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", implementationInPython);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", implementationInPython);
     }
 
     public void verifyBinaryTreeTraversalsLink() {
         LoggerLoad.info("User Clicks on Binary tree traversal link");
-        binaryTreeTraversals.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", binaryTreeTraversals);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", binaryTreeTraversals);
     }
 
     public void verifyImplementationOfBinaryTreesLink() {
         LoggerLoad.info("User Clicks on Implementation of Binary Trees link");
-        implementationOfBinaryTrees.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", implementationOfBinaryTrees);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", implementationOfBinaryTrees);
     }
 
     public void verifyApplicationsOfBinaryTreesLink() {
         LoggerLoad.info("User Clicks on Applications of Binary Trees link");
-        applicationsOfBinaryTrees.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", applicationsOfBinaryTrees);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", applicationsOfBinaryTrees);
     }
 
     public void verifyBinarySearchTreesLink() {
         LoggerLoad.info("User Clicks on  Binary Search Trees link");
-        binarySearchTrees.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", binarySearchTrees);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", binarySearchTrees);
     }
 
     public void verifyImplementationOfBSTLink() {
         LoggerLoad.info("User Clicks on Implementation of Binary Search Trees link");
-        implementationOfBST.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", implementationOfBST);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", implementationOfBST);
     }
 
     public void verifyTryHereLink() {
         LoggerLoad.info("User Clicks on Try Here button");
-        tryHere.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", tryHere);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", tryHere);
     }
 
     public String outputConsole() {
@@ -231,55 +216,4 @@ public class Tree_Page {
         practiceQuestions.click();
     }
 
-    public void navigateToTreeTopic(String topicKey) {
-        String url;
-
-        switch (topicKey) {
-            case "tree":
-                url = ConfigReader.getTreeUrl();
-                break;
-            case "overviewOfTrees":
-                url = ConfigReader.getOverviewOfTreesUrl();
-                break;
-            case "terminologies":
-                url = ConfigReader.getTerminologiesUrl();
-                break;
-            case "typesOfTrees":
-                url = ConfigReader.getTypesOfTreesUrl();
-                break;
-            case "treeTraversals":
-                url = ConfigReader.getTreeTraversalsUrl();
-                break;
-            case "traversalsIllustration":
-                url = ConfigReader.getTraversalsIllustrationUrl();
-                break;
-            case "binaryTrees":
-                url = ConfigReader.getBinaryTreesUrl();
-                break;
-            case "typesOfBinaryTrees":
-                url = ConfigReader.getTypesOfBinaryTreesUrl();
-                break;
-            case "implementationInPython":
-                url = ConfigReader.getImplementationInPythonUrl();
-                break;
-            case "binaryTreeTraversals":
-                url = ConfigReader.getBinaryTreeTraversalsUrl();
-                break;
-            case "implementationOfBinaryTrees":
-                url = ConfigReader.getImplementationOfBinaryTreesUrl();
-                break;
-            case "applicationsOfBinaryTrees":
-                url = ConfigReader.getApplicationsOfBinaryTreesUrl();
-                break;
-            case "binarySearchTrees":
-                url = ConfigReader.getBinarySearchTreesUrl();
-                break;
-            case "implementationOfBST":
-                url = ConfigReader.getImplementationOfBSTUrl();
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid Tree topic key: " + topicKey);
-        }
-        driver.get(url);
-    }
 }

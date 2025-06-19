@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
+import utilities.LoggerLoad;
 
 public class SignIn_Page {
 
@@ -14,8 +15,15 @@ public class SignIn_Page {
 	
 	//public static WebDriver driver = DriverFactory.getDriver();
 	public  WebDriver driver = DriverFactory.getDriver();
-	String loginurl = ConfigReader.loginPage();
-	String registerurl = ConfigReader.registerPageURL();
+	//String loginurl = ConfigReader.loginPage();
+	//String registerurl = ConfigReader.registerPageURL();
+
+	GetStarted_Page getStartedPage;
+
+	public SignIn_Page() {
+		PageFactory.initElements(driver, this);
+		getStartedPage = new GetStarted_Page();
+	}
 
 	@FindBy(xpath = "//input[@id='id_username']")
 	WebElement username;
@@ -27,24 +35,23 @@ public class SignIn_Page {
 	WebElement alertMsg;
 	@FindBy(xpath="/html[1]/body[1]/div[2]/div[1]/div[2]/a[1]")
 	WebElement registerlink;
+	@FindBy (xpath="//a[normalize-space()='Sign in']")
+	private WebElement signInLink;
 	@FindBy(xpath = "//div[contains(text(),'You are logged in')]")
 	WebElement successLogin;
-	
 
-	public SignIn_Page() {
-
-		PageFactory.initElements(driver, this);
-
-	}
-//To get LOg in URL
+	//To get Log in URL
 	public void getLoginurl() {
-		driver.get(loginurl);
+		//driver.get(loginurl);
+		getStartedPage.dsAlgoPortal();
+		getStartedPage.navigateToHomePage();
+		LoggerLoad.info("User is on the Home Page" );
+		signInLink.click();
+		LoggerLoad.info("User is on login page" );
 	}
 
 	public void enterUsername(String userName) {
-
 		username.sendKeys(userName);
-
 	}
 
 	public void enterPassword(String passWord) {

@@ -18,18 +18,19 @@ import utilities.ConfigReader;
 import utilities.LoggerLoad;
 
 public class hooks {
+	// execute code before and after each scenario or step
+
 	public WebDriver driver;
 	DriverFactory driverFactory = new DriverFactory();
 
 	@Before
 	public void defineBrowser(Scenario scenario) throws Throwable {
 		ConfigReader.readConfig();
-		driverFactory.initializeWebDriver(ConfigReader.browserType());
-
+		driverFactory.initializeWebDriver(ConfigReader.getBrowserType());
 	}
 
 	@AfterStep
-	public void afterstep(Scenario scenario) {
+	public void afterStep(Scenario scenario) {
 		if (scenario.isFailed()) {
 			LoggerLoad.error("Steps Failed , Taking Screenshot");
 			final byte[] screenshot = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.BYTES);
@@ -42,7 +43,6 @@ public class hooks {
 	@After
 	public void afterScenario(Scenario scenario) {
 		driverFactory.closeDriver();
-
 	}
 
 }
