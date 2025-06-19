@@ -146,7 +146,8 @@ public class Tree_Steps {
 
     @Then("User is able to see the error message in Tree Page pop up window")
     public void user_is_able_to_see_the_error_message_in_tree_page_pop_up_window() {
-        treePage.getErrorMessage();
+        //treePage.getErrorMessage();
+        treePage.verifyEditorOutput();
     }
 
 
@@ -315,15 +316,27 @@ public class Tree_Steps {
 
 
     //Scenario: The user is able to click and navigate to "Practice Questions"
+    @Given("The user is in the Implementation Of BST Page")
+    public void the_user_is_in_the_implementation_of_bst_page() {
+        homePage.selectTree();
+        treePage.verifyImplementationOfBSTLink();
+        LoggerLoad.info("User is on the Implementation Of BST page...");
+        String expectedTitle = "Implementation Of BST";
+        String actualTitle = driver.getTitle();
+        LoggerLoad.info("Current Page Title: " + actualTitle);
+        Assert.assertEquals(actualTitle, expectedTitle, "User is not on the Implementation Of BST page.");
+    }
+
     @When("The user clicks Trees Practice Questions link")
     public void the_user_clicks_trees_practice_questions_link() {
-        treePage.verifyImplementationOfBSTLink();
         treePage.verifyPracticeQuestionsLink();
     }
 
     @Then("The user is redirected to Trees Practice Questions page")
-    public void the_user_is_redirected_to_trees_practice_questions_page(String pageName) {
-        String Tittle = driver.getTitle();
-        assertEquals(Tittle, pageName);
+    public void the_user_is_redirected_to_trees_practice_questions_page() {
+        LoggerLoad.info("User is on the Trees Practice Questions page...");
+        String expectedTitle = "Practice Questions";
+        String actualTitle = driver.getTitle();
+        Assert.assertEquals(actualTitle, expectedTitle);
     }
 }
